@@ -71,6 +71,7 @@ Thumbs.db
 *.swo
 figures/*
 !figures/figure_captions.md
+!figures/fig13_yield_tier_confusion_matrix.png
 models/*
 !models/final_model.joblib
 submissions/*
