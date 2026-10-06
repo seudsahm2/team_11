@@ -26,6 +26,10 @@ class CropYieldPredictor:
         self.is_production_model = False
         self._load_production_model_if_available()
 
+    @property
+    def is_production(self) -> bool:
+        return self.is_production_model
+
     def _load_json(self, path):
         if path.exists():
             with open(path, "r", encoding="utf-8") as f:
@@ -172,10 +176,18 @@ class CropYieldPredictor:
                 seed_cert = int(inputs["improved_seed_used"])
                 labor_d = float(inputs["labor_days_per_ha"])
 
+                # Normalize categories to match trained model pipeline
+                norm_region = "SNNPR" if region.upper() == "SNNPR" else region.strip().title()
+                norm_crop = crop_type.strip().lower()
+                norm_month = month[:3].title()
+                valid_months = ['Aug', 'Feb', 'Jul', 'Jun', 'Mar']
+                if norm_month not in valid_months:
+                    norm_month = 'Jun'  # Main Meher sowing default
+
                 feat_dict = {
-                    "region": [region],
-                    "crop_type": [crop_type],
-                    "planting_month": [month],
+                    "region": [norm_region],
+                    "crop_type": [norm_crop],
+                    "planting_month": [norm_month],
                     "altitude_m": [alt_m],
                     "rainfall_mm_season": [rain_p],
                     "farm_size_ha": [farm_size],
