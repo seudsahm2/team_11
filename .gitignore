@@ -49,6 +49,7 @@ docs/
 models/*.joblib
 models/*.pkl
 !models/.gitkeep
+!models/final_model.joblib
 
 # Environment variables & secrets
 .env

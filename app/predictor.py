@@ -163,25 +163,36 @@ class CropYieldPredictor:
         if self.is_production_model and self.model is not None:
             try:
                 # Prepare dataframe matching training schema
+                avg_t = float(weather.get("avg_temp_c", 19.5))
+                rain_w = float(weather.get("seasonal_rainfall_mm", 650.0))
+                rain_p = float(inputs.get("rainfall_mm_season", rain_w))
+                heat_d = float(weather.get("extreme_heat_days", 0))
+                alt_m = float(inputs["altitude_m"])
+                fert = float(inputs["fertilizer_kg_per_ha"])
+                seed_cert = int(inputs["improved_seed_used"])
+                labor_d = float(inputs["labor_days_per_ha"])
+
                 feat_dict = {
                     "region": [region],
                     "crop_type": [crop_type],
-                    "survey_year": [year],
                     "planting_month": [month],
-                    "altitude_m": [float(inputs["altitude_m"])],
-                    "rainfall_mm_season": [float(inputs.get("rainfall_mm_season", weather["seasonal_rainfall_mm"]))],
+                    "altitude_m": [alt_m],
+                    "rainfall_mm_season": [rain_p],
                     "farm_size_ha": [farm_size],
-                    "fertilizer_kg_per_ha": [float(inputs["fertilizer_kg_per_ha"])],
-                    "improved_seed_used": [int(inputs["improved_seed_used"])],
+                    "fertilizer_kg_per_ha": [fert],
+                    "improved_seed_used": [seed_cert],
                     "pest_disease_flag": [int(inputs["pest_disease_flag"])],
                     "soil_quality_index": [float(inputs["soil_quality_index"])],
-                    "labor_days_per_ha": [float(inputs["labor_days_per_ha"])],
-                    "distance_to_market_km": [float(inputs["distance_to_market_km"])],
-                    # Derived weather features
-                    "avg_temp_c": [weather["avg_temp_c"]],
-                    "seasonal_rainfall_mm": [weather["seasonal_rainfall_mm"]],
-                    "extreme_heat_days": [weather["extreme_heat_days"]],
-                    "fert_seed_interaction": [float(inputs["fertilizer_kg_per_ha"]) * int(inputs["improved_seed_used"])]
+                    "labor_days_per_ha": [labor_d],
+                    "weather_season_mean_temp": [avg_t],
+                    "weather_season_rainfall_mm": [rain_w],
+                    "weather_season_heat_days": [heat_d],
+                    "weather_temp_anomaly_c": [float(weather.get("temp_anomaly_c", 0.0))],
+                    "fertilizer_improved_seed_interaction": [fert * seed_cert],
+                    "weather_rain_discrepancy_ratio": [rain_p / (rain_w + 1.0)],
+                    "labor_intensity_per_farm_size": [labor_d / (farm_size + 0.1)],
+                    "is_meher_season": [1 if month in ['Jun', 'Jul', 'Aug', 'Sep', 'Oct'] else 0],
+                    "altitude_temp_index": [(100.0 * avg_t) / (alt_m + 1.0)]
                 }
                 df_input = pd.DataFrame(feat_dict)
                 pred_yield = float(self.model.predict(df_input)[0])
