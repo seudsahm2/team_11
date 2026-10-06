@@ -609,7 +609,20 @@ with t_coop:
         {"plot_id": "COOP-SOM-03", "member": "Muktar Omer", "region": "Somali", "crop_type": "Maize", "survey_year": 2024, "planting_month": "Apr", "farm_size_ha": 2.0, "altitude_m": 1300, "fertilizer_kg_per_ha": 30, "improved_seed_used": 0, "pest_disease_flag": 0, "soil_quality_index": 0.48, "labor_days_per_ha": 25, "distance_to_market_km": 20.0}
     ])
 
-    batch_res = predictor.predict_batch(coop_sample)
+    if hasattr(predictor, "predict_batch"):
+        batch_res = predictor.predict_batch(coop_sample)
+    else:
+        _results = []
+        for _, row in coop_sample.iterrows():
+            _inputs = row.to_dict()
+            _res = predictor.predict(_inputs)
+            _enriched = dict(_inputs)
+            _enriched["predicted_yield_t_ha"] = _res["predicted_yield_tons_per_ha"]
+            _enriched["total_harvest_tons"] = _res["total_harvest_tons"]
+            _enriched["price_birr_per_quintal"] = _res["price_birr_per_quintal"]
+            _enriched["gross_revenue_birr"] = _res["gross_revenue_birr"]
+            _results.append(_enriched)
+        batch_res = pd.DataFrame(_results)
     c_tons = batch_res["total_harvest_tons"].sum()
     c_bags = c_tons * 10.0
     c_val = batch_res["gross_revenue_birr"].sum()
