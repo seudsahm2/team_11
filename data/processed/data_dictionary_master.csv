@@ -1,0 +1,27 @@
+column_name,data_type,source_table,description,derivation_formula
+plot_id,string,crop_yield_train.csv,Unique plot identifier and join key for scoring,Direct from source
+region,categorical,crop_yield_train.csv,"Standardized administrative region (Oromia, Amhara, SNNPR, Tigray, Somali)",Cleaned and standardized via str.strip/title mapping
+crop_type,categorical,crop_yield_train.csv,"Standardized cultivated crop (barley, maize, sorghum, teff, wheat)","Cleaned, stripped, lowercase, typo correction (e.g. Tef -> teff)"
+survey_year,integer,crop_yield_train.csv,Survey year of observation (2021-2024),Direct from source
+planting_month,categorical,crop_yield_train.csv,"Calendar month the crop was planted (Feb, Mar, Jun, Jul, Aug)",Direct from source
+altitude_m,numeric,crop_yield_train.csv,Elevation in meters above sea level,Direct numeric conversion
+rainfall_mm_season,numeric,crop_yield_train.csv,Plot-level self-reported growing-season rainfall in mm,Median imputed using train median (848.76 mm)
+farm_size_ha,numeric,crop_yield_train.csv,Total cultivated farm size in hectares,Clipped lower bound at 0.01 ha
+fertilizer_kg_per_ha,numeric,crop_yield_train.csv,Chemical fertilizer applied in kg per hectare,"Median imputed using train median (33.83 kg/ha), non-negative clipped"
+improved_seed_used,binary,crop_yield_train.csv,"Certified improved seed utilized (0 = No, 1 = Yes)",Direct binary indicator
+pest_disease_flag,binary,crop_yield_train.csv,"Pest or disease pressure observed (0 = No, 1 = Yes)",Sentinels (-999) replaced and mode imputed (0)
+soil_quality_index,numeric,crop_yield_train.csv,Composite soil quality index score (0 to 1),Median imputed using train median (0.565)
+labor_days_per_ha,numeric,crop_yield_train.csv,Labor-days invested per hectare,Sentinels (-999) replaced and median imputed (45.04 days/ha)
+distance_to_market_km,numeric,crop_yield_train.csv,Distance to nearest agricultural produce market in km,"Direct numeric conversion, clipped at 0"
+yield_tons_per_ha,numeric,crop_yield_train.csv,"True harvested crop yield in tons per hectare (TARGET, Train only)","Target variable, clipped lower bound at 0"
+weather_season_mean_temp,numeric,regional_weather.csv,Mean temperature over 4-month growing season window (deg C),Average of monthly avg_temp_c over [planting_month .. +3 months]
+weather_season_rainfall_mm,numeric,regional_weather.csv,Total cumulative rainfall over 4-month growing season window (mm),Sum of monthly_rainfall_mm scaled proportionally to 4 months
+weather_season_heat_days,numeric,regional_weather.csv,Total extreme heat days over 4-month growing season window,Sum of extreme_heat_days scaled proportionally to 4 months
+weather_temp_anomaly_c,numeric,regional_weather.csv,Deviation of season mean temp from region 4-year baseline (deg C),weather_season_mean_temp minus regional 4-year mean temp
+weather_months_available,integer,regional_weather.csv,Count of monthly records available in growing season window (2 to 4),Count of valid monthly records matched
+price_birr_per_quintal,numeric,market_prices.csv,Market price in Ethiopian Birr per quintal (100 kg),"Cleaned, unit corrected (*100 for <500 Birr), median imputed"
+fertilizer_improved_seed_interaction,numeric,Engineered,Interaction term between fertilizer kg/ha and certified seed flag,fertilizer_kg_per_ha * improved_seed_used
+weather_rain_discrepancy_ratio,numeric,Engineered,Ratio of plot self-reported rainfall to regional station rainfall,rainfall_mm_season / (weather_season_rainfall_mm + 1e-5)
+labor_intensity_per_farm_size,numeric,Engineered,Labor days per hectare normalized by farm size,labor_days_per_ha / (farm_size_ha + 0.1)
+is_meher_season,binary,Engineered,Indicator for main rainy season Meher planting (Jun-Aug),"planting_month in [Jun, Jul, Aug] (1 = Meher, 0 = Belg)"
+altitude_temp_index,numeric,Engineered,Agro-ecological elevation-to-temperature index,altitude_m / (weather_season_mean_temp + 273.15)

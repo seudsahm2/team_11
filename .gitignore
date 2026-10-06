@@ -43,8 +43,7 @@ docs/
 *.mht
 
 # Data directories
-data/processed/*.csv
-!data/processed/.gitkeep
+# Both data/raw and data/processed are tracked for full reproducibility
 
 # Large serialized models
 models/*.joblib
