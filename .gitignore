@@ -42,8 +42,7 @@ venv.bak/
 docs/
 *.mht
 
-# Data directories (raw and processed data)
-data/raw/
+# Data directories
 data/processed/*.csv
 !data/processed/.gitkeep
 
