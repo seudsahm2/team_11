@@ -69,3 +69,7 @@ Thumbs.db
 .vscode/
 *.swp
 *.swo
+
+figures/*
+models/*
+submissions/*
