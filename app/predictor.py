@@ -243,7 +243,9 @@ class CropYieldPredictor:
             enriched = dict(inputs)
             enriched["predicted_yield_t_ha"] = res["predicted_yield_tons_per_ha"]
             enriched["total_harvest_tons"] = res["total_harvest_tons"]
+            enriched["total_quintals"] = res["total_quintals"]
             enriched["price_birr_per_quintal"] = res["price_birr_per_quintal"]
             enriched["gross_revenue_birr"] = res["gross_revenue_birr"]
+            enriched["engine"] = res["engine"]
             results.append(enriched)
         return pd.DataFrame(results)

@@ -548,11 +548,12 @@ with t_appraisal:
             </div>
             """, unsafe_allow_html=True)
 
-        # Fast Vectorized Dual-Axis Profit Curve (Zero Freezing!)
+        # Real Production Model Multi-Point Simulation Curve (final_model.joblib)
         steps = np.array([0, 20, 40, 60, 80, 100, 120, 140, 160])
-        base_kg_yields = pred_y * (1.0 + (steps - fert_val) * 0.0035)
-        curve_bags = np.clip(base_kg_yields * farm_size * 10.0, 5, None)
-        curve_revs = curve_bags * spot_price
+        sim_df = pd.DataFrame([dict(in_dict, fertilizer_kg_per_ha=f) for f in steps])
+        sim_batch_res = predictor.predict_batch(sim_df)
+        curve_bags = sim_batch_res["total_quintals"].values
+        curve_revs = sim_batch_res["gross_revenue_birr"].values
         curve_costs = (steps * farm_size * 42.0) + cost_seed + cost_labor + cost_pest
         curve_profits = curve_revs - curve_costs
 
