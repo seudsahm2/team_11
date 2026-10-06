@@ -44,20 +44,54 @@ css_template = """
         color: #1e293b;
     }
     
-    header[data-testid="stHeader"] {
-        background: transparent !important;
-        height: 0px !important;
-        z-index: 1 !important;
+    body, html {
+        margin: 0 !important;
+        padding: 0 !important;
     }
     
-    .block-container {
+    header[data-testid="stHeader"], 
+    header, 
+    [data-testid="stHeader"] {
+        display: none !important;
+        height: 0px !important;
+        min-height: 0px !important;
+        max-height: 0px !important;
+        visibility: hidden !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    [data-testid="stAppViewContainer"], 
+    section[data-testid="stMain"],
+    .stMain,
+    section.stMain {
         padding-top: 0rem !important;
+        margin-top: 0rem !important;
+    }
+
+    [data-testid="stMainBlockContainer"], 
+    .block-container, 
+    .stMainBlockContainer,
+    div[data-testid="stMainBlockContainer"],
+    section.stMain > div {
+        padding-top: 0rem !important;
+        margin-top: 0rem !important;
         padding-bottom: 3rem !important;
         max-width: 1440px !important;
+    }
+
+    [data-testid="stVerticalBlock"] {
+        gap: 0rem !important;
+    }
+    [data-testid="stVerticalBlock"] > div:first-child {
+        margin-top: 0rem !important;
+        padding-top: 0rem !important;
     }
     
     .stApp {
         background-color: #faf9f5;
+        margin-top: 0rem !important;
+        padding-top: 0rem !important;
     }
     
     /* Top Navbar inside Hero */
@@ -292,34 +326,60 @@ css_template = """
     /* Stats Ribbon (Dark Forest Green) */
     .stats-ribbon {
         background: #143d2b;
-        border-radius: 20px;
-        padding: 36px 32px;
+        border-radius: 24px;
+        padding: 38px 32px;
         margin: 36px 0;
         color: #ffffff;
         display: flex;
         justify-content: space-around;
         text-align: center;
-        box-shadow: 0 15px 35px -8px rgba(20, 61, 43, 0.3);
+        box-shadow: 0 16px 36px -8px rgba(20, 61, 43, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.12);
     }
     .stat-item {
         flex: 1;
         padding: 0 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-    .stat-icon {
-        font-size: 26px;
-        margin-bottom: 8px;
+    .stat-icon-svg-box {
+        width: 52px;
+        height: 52px;
+        background: rgba(134, 239, 172, 0.14);
+        border: 1px solid rgba(134, 239, 172, 0.30);
+        border-radius: 16px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 14px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+        transition: transform 0.22s ease, background 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+    .stat-item:hover .stat-icon-svg-box {
+        transform: translateY(-3px) scale(1.08);
+        background: rgba(134, 239, 172, 0.24);
+        border-color: #86efac;
+        box-shadow: 0 8px 20px rgba(134, 239, 172, 0.28);
     }
     .stat-number {
-        font-size: 2.2rem;
+        font-size: 2.3rem;
         font-weight: 800;
         color: #ffffff;
         line-height: 1.1;
-        margin-bottom: 4px;
+        margin-bottom: 6px;
+        letter-spacing: -0.01em;
     }
     .stat-label {
         font-size: 0.85rem;
         color: #86efac;
         font-weight: 600;
+    }
+    .stat-sublabel {
+        font-size: 0.74rem;
+        color: #94a3b8;
+        font-weight: 500;
+        margin-top: 3px;
     }
     
     /* Form & Results Cards */
@@ -682,24 +742,52 @@ with c4:
 # ------------------------------------------------------------------------------
 st.markdown("""<div class="stats-ribbon">
 <div class="stat-item">
-<div class="stat-icon">👥</div>
+<div class="stat-icon-svg-box">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#86efac" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+<rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+<rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+<rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+</svg>
+</div>
 <div class="stat-number">15,090+</div>
 <div class="stat-label">Survey Plots Analyzed</div>
+<div class="stat-sublabel">Master Training Registry</div>
 </div>
 <div class="stat-item">
-<div class="stat-icon">📍</div>
+<div class="stat-icon-svg-box">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#86efac" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<path d="M12 2a8 8 0 0 0-8 8c0 5.25 7 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path>
+<circle cx="12" cy="10" r="3"></circle>
+</svg>
+</div>
 <div class="stat-number">5 Regions</div>
 <div class="stat-label">Oromia, Amhara, SNNPR, Tigray, Somali</div>
+<div class="stat-sublabel">National Agro-Climatic Coverage</div>
 </div>
 <div class="stat-item">
-<div class="stat-icon">📈</div>
+<div class="stat-icon-svg-box">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#86efac" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+<polyline points="16 7 22 7 22 13"></polyline>
+</svg>
+</div>
 <div class="stat-number">+28.5%</div>
 <div class="stat-label">Average Improved Seed Lift</div>
+<div class="stat-sublabel">Certified Seed Yield Advantage</div>
 </div>
 <div class="stat-item">
-<div class="stat-icon">🌾</div>
+<div class="stat-icon-svg-box">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#86efac" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<path d="M12 22v-9"></path>
+<path d="M9 8a3 3 0 0 1 3-3 3 3 0 0 1 3 3c0 2-3 5-3 5s-3-3-3-5z"></path>
+<path d="M4 14a3 3 0 0 1 3-3 3 3 0 0 1 3 3c0 2-3 5-3 5s-3-3-3-5z"></path>
+<path d="M14 14a3 3 0 0 1 3-3 3 3 0 0 1 3 3c0 2-3 5-3 5s-3-3-3-5z"></path>
+</svg>
+</div>
 <div class="stat-number">5 Crops</div>
 <div class="stat-label">Teff, Wheat, Maize, Sorghum, Barley</div>
+<div class="stat-sublabel">Calibrated Smallholder Staples</div>
 </div>
 </div>""", unsafe_allow_html=True)
 
