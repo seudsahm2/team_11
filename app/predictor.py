@@ -233,3 +233,17 @@ class CropYieldPredictor:
             "is_production": self.is_production_model,
             "weather_looked_up": weather
         }
+
+    def predict_batch(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Runs fast batch inference across multiple smallholder survey plots."""
+        results = []
+        for _, row in df.iterrows():
+            inputs = row.to_dict()
+            res = self.predict(inputs)
+            enriched = dict(inputs)
+            enriched["predicted_yield_t_ha"] = res["predicted_yield_tons_per_ha"]
+            enriched["total_harvest_tons"] = res["total_harvest_tons"]
+            enriched["price_birr_per_quintal"] = res["price_birr_per_quintal"]
+            enriched["gross_revenue_birr"] = res["gross_revenue_birr"]
+            results.append(enriched)
+        return pd.DataFrame(results)
