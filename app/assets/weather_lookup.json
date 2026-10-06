@@ -1,0 +1,1252 @@
+{
+  "Oromia": {
+    "2021": {
+      "Jan": {
+        "avg_temp_c": 20.12,
+        "seasonal_rainfall_mm": 190.6,
+        "extreme_heat_days": 0
+      },
+      "Feb": {
+        "avg_temp_c": 20.2,
+        "seasonal_rainfall_mm": 218.7,
+        "extreme_heat_days": 0
+      },
+      "Mar": {
+        "avg_temp_c": 19.7,
+        "seasonal_rainfall_mm": 322.4,
+        "extreme_heat_days": 0
+      },
+      "Apr": {
+        "avg_temp_c": 19.1,
+        "seasonal_rainfall_mm": 386.1,
+        "extreme_heat_days": 1
+      },
+      "May": {
+        "avg_temp_c": 18.3,
+        "seasonal_rainfall_mm": 446.9,
+        "extreme_heat_days": 1
+      },
+      "Jun": {
+        "avg_temp_c": 17.7,
+        "seasonal_rainfall_mm": 545.8,
+        "extreme_heat_days": 1
+      },
+      "Jul": {
+        "avg_temp_c": 18.75,
+        "seasonal_rainfall_mm": 394.9,
+        "extreme_heat_days": 1
+      },
+      "Aug": {
+        "avg_temp_c": 19.08,
+        "seasonal_rainfall_mm": 301.6,
+        "extreme_heat_days": 0
+      },
+      "Sep": {
+        "avg_temp_c": 19.57,
+        "seasonal_rainfall_mm": 193.0,
+        "extreme_heat_days": 0
+      },
+      "Oct": {
+        "avg_temp_c": 20.1,
+        "seasonal_rainfall_mm": 66.0,
+        "extreme_heat_days": 0
+      },
+      "Nov": {
+        "avg_temp_c": 19.55,
+        "seasonal_rainfall_mm": 113.2,
+        "extreme_heat_days": 0
+      },
+      "Dec": {
+        "avg_temp_c": 19.82,
+        "seasonal_rainfall_mm": 142.8,
+        "extreme_heat_days": 0
+      }
+    },
+    "2022": {
+      "Jan": {
+        "avg_temp_c": 20.87,
+        "seasonal_rainfall_mm": 280.8,
+        "extreme_heat_days": 0
+      },
+      "Feb": {
+        "avg_temp_c": 20.77,
+        "seasonal_rainfall_mm": 354.0,
+        "extreme_heat_days": 0
+      },
+      "Mar": {
+        "avg_temp_c": 20.12,
+        "seasonal_rainfall_mm": 532.9,
+        "extreme_heat_days": 0
+      },
+      "Apr": {
+        "avg_temp_c": 19.7,
+        "seasonal_rainfall_mm": 555.5,
+        "extreme_heat_days": 0
+      },
+      "May": {
+        "avg_temp_c": 19.1,
+        "seasonal_rainfall_mm": 670.9,
+        "extreme_heat_days": 0
+      },
+      "Jun": {
+        "avg_temp_c": 18.73,
+        "seasonal_rainfall_mm": 765.3,
+        "extreme_heat_days": 0
+      },
+      "Jul": {
+        "avg_temp_c": 19.4,
+        "seasonal_rainfall_mm": 499.5,
+        "extreme_heat_days": 0
+      },
+      "Aug": {
+        "avg_temp_c": 19.43,
+        "seasonal_rainfall_mm": 396.8,
+        "extreme_heat_days": 0
+      },
+      "Sep": {
+        "avg_temp_c": 19.88,
+        "seasonal_rainfall_mm": 211.1,
+        "extreme_heat_days": 0
+      },
+      "Oct": {
+        "avg_temp_c": 20.17,
+        "seasonal_rainfall_mm": 43.5,
+        "extreme_heat_days": 0
+      },
+      "Nov": {
+        "avg_temp_c": 20.13,
+        "seasonal_rainfall_mm": 130.4,
+        "extreme_heat_days": 0
+      },
+      "Dec": {
+        "avg_temp_c": 20.67,
+        "seasonal_rainfall_mm": 210.5,
+        "extreme_heat_days": 0
+      }
+    },
+    "2023": {
+      "Jan": {
+        "avg_temp_c": 19.95,
+        "seasonal_rainfall_mm": 259.1,
+        "extreme_heat_days": 0
+      },
+      "Feb": {
+        "avg_temp_c": 20.1,
+        "seasonal_rainfall_mm": 307.5,
+        "extreme_heat_days": 0
+      },
+      "Mar": {
+        "avg_temp_c": 19.27,
+        "seasonal_rainfall_mm": 359.0,
+        "extreme_heat_days": 0
+      },
+      "Apr": {
+        "avg_temp_c": 18.4,
+        "seasonal_rainfall_mm": 485.2,
+        "extreme_heat_days": 0
+      },
+      "May": {
+        "avg_temp_c": 17.65,
+        "seasonal_rainfall_mm": 642.9,
+        "extreme_heat_days": 0
+      },
+      "Jun": {
+        "avg_temp_c": 17.25,
+        "seasonal_rainfall_mm": 712.2,
+        "extreme_heat_days": 0
+      },
+      "Jul": {
+        "avg_temp_c": 17.85,
+        "seasonal_rainfall_mm": 607.2,
+        "extreme_heat_days": 0
+      },
+      "Aug": {
+        "avg_temp_c": 18.15,
+        "seasonal_rainfall_mm": 433.3,
+        "extreme_heat_days": 0
+      },
+      "Sep": {
+        "avg_temp_c": 18.55,
+        "seasonal_rainfall_mm": 200.5,
+        "extreme_heat_days": 0
+      },
+      "Oct": {
+        "avg_temp_c": 18.8,
+        "seasonal_rainfall_mm": 82.8,
+        "extreme_heat_days": 0
+      },
+      "Nov": {
+        "avg_temp_c": 19.03,
+        "seasonal_rainfall_mm": 136.3,
+        "extreme_heat_days": 0
+      },
+      "Dec": {
+        "avg_temp_c": 19.6,
+        "seasonal_rainfall_mm": 184.0,
+        "extreme_heat_days": 0
+      }
+    },
+    "2024": {
+      "Jan": {
+        "avg_temp_c": 19.27,
+        "seasonal_rainfall_mm": 256.7,
+        "extreme_heat_days": 0
+      },
+      "Feb": {
+        "avg_temp_c": 19.2,
+        "seasonal_rainfall_mm": 294.9,
+        "extreme_heat_days": 0
+      },
+      "Mar": {
+        "avg_temp_c": 18.98,
+        "seasonal_rainfall_mm": 374.2,
+        "extreme_heat_days": 1
+      },
+      "Apr": {
+        "avg_temp_c": 18.2,
+        "seasonal_rainfall_mm": 487.4,
+        "extreme_heat_days": 1
+      },
+      "May": {
+        "avg_temp_c": 17.93,
+        "seasonal_rainfall_mm": 616.7,
+        "extreme_heat_days": 1
+      },
+      "Jun": {
+        "avg_temp_c": 17.12,
+        "seasonal_rainfall_mm": 548.6,
+        "extreme_heat_days": 1
+      },
+      "Jul": {
+        "avg_temp_c": 17.07,
+        "seasonal_rainfall_mm": 390.8,
+        "extreme_heat_days": 0
+      },
+      "Aug": {
+        "avg_temp_c": 17.87,
+        "seasonal_rainfall_mm": 205.9,
+        "extreme_heat_days": 0
+      },
+      "Sep": {
+        "avg_temp_c": 17.4,
+        "seasonal_rainfall_mm": 34.0,
+        "extreme_heat_days": 0
+      },
+      "Oct": {
+        "avg_temp_c": 18.57,
+        "seasonal_rainfall_mm": 63.9,
+        "extreme_heat_days": 0
+      },
+      "Nov": {
+        "avg_temp_c": 18.47,
+        "seasonal_rainfall_mm": 142.4,
+        "extreme_heat_days": 0
+      },
+      "Dec": {
+        "avg_temp_c": 18.65,
+        "seasonal_rainfall_mm": 214.1,
+        "extreme_heat_days": 0
+      }
+    }
+  },
+  "Amhara": {
+    "2021": {
+      "Jan": {
+        "avg_temp_c": 17.48,
+        "seasonal_rainfall_mm": 325.6,
+        "extreme_heat_days": 1
+      },
+      "Feb": {
+        "avg_temp_c": 17.58,
+        "seasonal_rainfall_mm": 372.8,
+        "extreme_heat_days": 0
+      },
+      "Mar": {
+        "avg_temp_c": 17.1,
+        "seasonal_rainfall_mm": 447.2,
+        "extreme_heat_days": 1
+      },
+      "Apr": {
+        "avg_temp_c": 17.0,
+        "seasonal_rainfall_mm": 547.4,
+        "extreme_heat_days": 1
+      },
+      "May": {
+        "avg_temp_c": 16.3,
+        "seasonal_rainfall_mm": 731.0,
+        "extreme_heat_days": 1
+      },
+      "Jun": {
+        "avg_temp_c": 15.65,
+        "seasonal_rainfall_mm": 924.1,
+        "extreme_heat_days": 1
+      },
+      "Jul": {
+        "avg_temp_c": 16.5,
+        "seasonal_rainfall_mm": 798.2,
+        "extreme_heat_days": 1
+      },
+      "Aug": {
+        "avg_temp_c": 16.95,
+        "seasonal_rainfall_mm": 621.7,
+        "extreme_heat_days": 1
+      },
+      "Sep": {
+        "avg_temp_c": 17.25,
+        "seasonal_rainfall_mm": 371.6,
+        "extreme_heat_days": 1
+      },
+      "Oct": {
+        "avg_temp_c": 17.8,
+        "seasonal_rainfall_mm": 131.3,
+        "extreme_heat_days": 2
+      },
+      "Nov": {
+        "avg_temp_c": 17.42,
+        "seasonal_rainfall_mm": 182.8,
+        "extreme_heat_days": 1
+      },
+      "Dec": {
+        "avg_temp_c": 17.08,
+        "seasonal_rainfall_mm": 259.1,
+        "extreme_heat_days": 1
+      }
+    },
+    "2022": {
+      "Jan": {
+        "avg_temp_c": 19.73,
+        "seasonal_rainfall_mm": 190.4,
+        "extreme_heat_days": 0
+      },
+      "Feb": {
+        "avg_temp_c": 19.55,
+        "seasonal_rainfall_mm": 229.4,
+        "extreme_heat_days": 0
+      },
+      "Mar": {
+        "avg_temp_c": 18.75,
+        "seasonal_rainfall_mm": 295.6,
+        "extreme_heat_days": 0
+      },
+      "Apr": {
+        "avg_temp_c": 18.27,
+        "seasonal_rainfall_mm": 341.2,
+        "extreme_heat_days": 0
+      },
+      "May": {
+        "avg_temp_c": 17.8,
+        "seasonal_rainfall_mm": 294.7,
+        "extreme_heat_days": 0
+      },
+      "Jun": {
+        "avg_temp_c": 17.2,
+        "seasonal_rainfall_mm": 483.2,
+        "extreme_heat_days": 0
+      },
+      "Jul": {
+        "avg_temp_c": 17.47,
+        "seasonal_rainfall_mm": 354.5,
+        "extreme_heat_days": 0
+      },
+      "Aug": {
+        "avg_temp_c": 18.0,
+        "seasonal_rainfall_mm": 270.2,
+        "extreme_heat_days": 0
+      },
+      "Sep": {
+        "avg_temp_c": 18.15,
+        "seasonal_rainfall_mm": 284.5,
+        "extreme_heat_days": 0
+      },
+      "Oct": {
+        "avg_temp_c": 19.3,
+        "seasonal_rainfall_mm": 57.0,
+        "extreme_heat_days": 0
+      },
+      "Nov": {
+        "avg_temp_c": 19.38,
+        "seasonal_rainfall_mm": 119.5,
+        "extreme_heat_days": 0
+      },
+      "Dec": {
+        "avg_temp_c": 19.45,
+        "seasonal_rainfall_mm": 158.2,
+        "extreme_heat_days": 0
+      }
+    },
+    "2023": {
+      "Jan": {
+        "avg_temp_c": 16.2,
+        "seasonal_rainfall_mm": 191.4,
+        "extreme_heat_days": 0
+      },
+      "Feb": {
+        "avg_temp_c": 15.83,
+        "seasonal_rainfall_mm": 229.8,
+        "extreme_heat_days": 0
+      },
+      "Mar": {
+        "avg_temp_c": 16.25,
+        "seasonal_rainfall_mm": 279.7,
+        "extreme_heat_days": 0
+      },
+      "Apr": {
+        "avg_temp_c": 15.85,
+        "seasonal_rainfall_mm": 466.9,
+        "extreme_heat_days": 0
+      },
+      "May": {
+        "avg_temp_c": 15.57,
+        "seasonal_rainfall_mm": 610.2,
+        "extreme_heat_days": 0
+      },
+      "Jun": {
+        "avg_temp_c": 15.2,
+        "seasonal_rainfall_mm": 709.4,
+        "extreme_heat_days": 0
+      },
+      "Jul": {
+        "avg_temp_c": 15.03,
+        "seasonal_rainfall_mm": 608.7,
+        "extreme_heat_days": 0
+      },
+      "Aug": {
+        "avg_temp_c": 15.3,
+        "seasonal_rainfall_mm": 385.5,
+        "extreme_heat_days": 0
+      },
+      "Sep": {
+        "avg_temp_c": 15.57,
+        "seasonal_rainfall_mm": 192.7,
+        "extreme_heat_days": 0
+      },
+      "Oct": {
+        "avg_temp_c": 16.57,
+        "seasonal_rainfall_mm": 55.1,
+        "extreme_heat_days": 0
+      },
+      "Nov": {
+        "avg_temp_c": 16.23,
+        "seasonal_rainfall_mm": 105.9,
+        "extreme_heat_days": 0
+      },
+      "Dec": {
+        "avg_temp_c": 16.4,
+        "seasonal_rainfall_mm": 141.9,
+        "extreme_heat_days": 0
+      }
+    },
+    "2024": {
+      "Jan": {
+        "avg_temp_c": 17.95,
+        "seasonal_rainfall_mm": 198.8,
+        "extreme_heat_days": 0
+      },
+      "Feb": {
+        "avg_temp_c": 18.1,
+        "seasonal_rainfall_mm": 228.3,
+        "extreme_heat_days": 0
+      },
+      "Mar": {
+        "avg_temp_c": 17.25,
+        "seasonal_rainfall_mm": 296.5,
+        "extreme_heat_days": 0
+      },
+      "Apr": {
+        "avg_temp_c": 16.58,
+        "seasonal_rainfall_mm": 464.1,
+        "extreme_heat_days": 0
+      },
+      "May": {
+        "avg_temp_c": 16.28,
+        "seasonal_rainfall_mm": 495.1,
+        "extreme_heat_days": 0
+      },
+      "Jun": {
+        "avg_temp_c": 15.76,
+        "seasonal_rainfall_mm": 592.0,
+        "extreme_heat_days": 0
+      },
+      "Jul": {
+        "avg_temp_c": 15.8,
+        "seasonal_rainfall_mm": 475.7,
+        "extreme_heat_days": 0
+      },
+      "Aug": {
+        "avg_temp_c": 16.08,
+        "seasonal_rainfall_mm": 247.9,
+        "extreme_heat_days": 0
+      },
+      "Sep": {
+        "avg_temp_c": 15.87,
+        "seasonal_rainfall_mm": 190.7,
+        "extreme_heat_days": 0
+      },
+      "Oct": {
+        "avg_temp_c": 16.53,
+        "seasonal_rainfall_mm": 64.3,
+        "extreme_heat_days": 0
+      },
+      "Nov": {
+        "avg_temp_c": 17.6,
+        "seasonal_rainfall_mm": 112.4,
+        "extreme_heat_days": 0
+      },
+      "Dec": {
+        "avg_temp_c": 17.87,
+        "seasonal_rainfall_mm": 172.6,
+        "extreme_heat_days": 0
+      }
+    }
+  },
+  "SNNPR": {
+    "2021": {
+      "Jan": {
+        "avg_temp_c": 23.15,
+        "seasonal_rainfall_mm": 267.5,
+        "extreme_heat_days": 18
+      },
+      "Feb": {
+        "avg_temp_c": 22.8,
+        "seasonal_rainfall_mm": 350.5,
+        "extreme_heat_days": 12
+      },
+      "Mar": {
+        "avg_temp_c": 21.58,
+        "seasonal_rainfall_mm": 490.9,
+        "extreme_heat_days": 8
+      },
+      "Apr": {
+        "avg_temp_c": 20.84,
+        "seasonal_rainfall_mm": 954.5,
+        "extreme_heat_days": 0
+      },
+      "May": {
+        "avg_temp_c": 20.48,
+        "seasonal_rainfall_mm": 1101.6,
+        "extreme_heat_days": 0
+      },
+      "Jun": {
+        "avg_temp_c": 20.36,
+        "seasonal_rainfall_mm": 1195.2,
+        "extreme_heat_days": 0
+      },
+      "Jul": {
+        "avg_temp_c": 21.0,
+        "seasonal_rainfall_mm": 1019.3,
+        "extreme_heat_days": 0
+      },
+      "Aug": {
+        "avg_temp_c": 21.32,
+        "seasonal_rainfall_mm": 477.7,
+        "extreme_heat_days": 0
+      },
+      "Sep": {
+        "avg_temp_c": 21.72,
+        "seasonal_rainfall_mm": 280.6,
+        "extreme_heat_days": 0
+      },
+      "Oct": {
+        "avg_temp_c": 22.23,
+        "seasonal_rainfall_mm": 104.0,
+        "extreme_heat_days": 6
+      },
+      "Nov": {
+        "avg_temp_c": 22.65,
+        "seasonal_rainfall_mm": 139.5,
+        "extreme_heat_days": 10
+      },
+      "Dec": {
+        "avg_temp_c": 23.1,
+        "seasonal_rainfall_mm": 217.5,
+        "extreme_heat_days": 18
+      }
+    },
+    "2022": {
+      "Jan": {
+        "avg_temp_c": 21.18,
+        "seasonal_rainfall_mm": 295.3,
+        "extreme_heat_days": 1
+      },
+      "Feb": {
+        "avg_temp_c": 21.48,
+        "seasonal_rainfall_mm": 327.1,
+        "extreme_heat_days": 1
+      },
+      "Mar": {
+        "avg_temp_c": 20.98,
+        "seasonal_rainfall_mm": 461.6,
+        "extreme_heat_days": 1
+      },
+      "Apr": {
+        "avg_temp_c": 19.93,
+        "seasonal_rainfall_mm": 518.6,
+        "extreme_heat_days": 0
+      },
+      "May": {
+        "avg_temp_c": 19.02,
+        "seasonal_rainfall_mm": 640.6,
+        "extreme_heat_days": 1
+      },
+      "Jun": {
+        "avg_temp_c": 18.2,
+        "seasonal_rainfall_mm": 699.3,
+        "extreme_heat_days": 1
+      },
+      "Jul": {
+        "avg_temp_c": 18.65,
+        "seasonal_rainfall_mm": 517.6,
+        "extreme_heat_days": 1
+      },
+      "Aug": {
+        "avg_temp_c": 19.42,
+        "seasonal_rainfall_mm": 398.3,
+        "extreme_heat_days": 1
+      },
+      "Sep": {
+        "avg_temp_c": 19.77,
+        "seasonal_rainfall_mm": 171.1,
+        "extreme_heat_days": 0
+      },
+      "Oct": {
+        "avg_temp_c": 20.47,
+        "seasonal_rainfall_mm": 80.6,
+        "extreme_heat_days": 0
+      },
+      "Nov": {
+        "avg_temp_c": 20.53,
+        "seasonal_rainfall_mm": 127.8,
+        "extreme_heat_days": 0
+      },
+      "Dec": {
+        "avg_temp_c": 20.9,
+        "seasonal_rainfall_mm": 190.1,
+        "extreme_heat_days": 1
+      }
+    },
+    "2023": {
+      "Jan": {
+        "avg_temp_c": 20.6,
+        "seasonal_rainfall_mm": 242.9,
+        "extreme_heat_days": 1
+      },
+      "Feb": {
+        "avg_temp_c": 21.13,
+        "seasonal_rainfall_mm": 339.6,
+        "extreme_heat_days": 1
+      },
+      "Mar": {
+        "avg_temp_c": 20.2,
+        "seasonal_rainfall_mm": 506.9,
+        "extreme_heat_days": 1
+      },
+      "Apr": {
+        "avg_temp_c": 19.68,
+        "seasonal_rainfall_mm": 676.7,
+        "extreme_heat_days": 1
+      },
+      "May": {
+        "avg_temp_c": 19.07,
+        "seasonal_rainfall_mm": 750.0,
+        "extreme_heat_days": 0
+      },
+      "Jun": {
+        "avg_temp_c": 18.65,
+        "seasonal_rainfall_mm": 765.9,
+        "extreme_heat_days": 0
+      },
+      "Jul": {
+        "avg_temp_c": 19.02,
+        "seasonal_rainfall_mm": 516.1,
+        "extreme_heat_days": 0
+      },
+      "Aug": {
+        "avg_temp_c": 19.27,
+        "seasonal_rainfall_mm": 376.1,
+        "extreme_heat_days": 0
+      },
+      "Sep": {
+        "avg_temp_c": 19.77,
+        "seasonal_rainfall_mm": 214.0,
+        "extreme_heat_days": 0
+      },
+      "Oct": {
+        "avg_temp_c": 19.8,
+        "seasonal_rainfall_mm": 101.4,
+        "extreme_heat_days": 0
+      },
+      "Nov": {
+        "avg_temp_c": 20.12,
+        "seasonal_rainfall_mm": 183.9,
+        "extreme_heat_days": 0
+      },
+      "Dec": {
+        "avg_temp_c": 20.47,
+        "seasonal_rainfall_mm": 154.1,
+        "extreme_heat_days": 0
+      }
+    },
+    "2024": {
+      "Jan": {
+        "avg_temp_c": 21.35,
+        "seasonal_rainfall_mm": 319.9,
+        "extreme_heat_days": 1
+      },
+      "Feb": {
+        "avg_temp_c": 21.43,
+        "seasonal_rainfall_mm": 375.3,
+        "extreme_heat_days": 0
+      },
+      "Mar": {
+        "avg_temp_c": 20.98,
+        "seasonal_rainfall_mm": 457.4,
+        "extreme_heat_days": 0
+      },
+      "Apr": {
+        "avg_temp_c": 20.25,
+        "seasonal_rainfall_mm": 509.4,
+        "extreme_heat_days": 0
+      },
+      "May": {
+        "avg_temp_c": 19.17,
+        "seasonal_rainfall_mm": 513.3,
+        "extreme_heat_days": 0
+      },
+      "Jun": {
+        "avg_temp_c": 18.52,
+        "seasonal_rainfall_mm": 703.0,
+        "extreme_heat_days": 0
+      },
+      "Jul": {
+        "avg_temp_c": 18.95,
+        "seasonal_rainfall_mm": 545.9,
+        "extreme_heat_days": 0
+      },
+      "Aug": {
+        "avg_temp_c": 19.27,
+        "seasonal_rainfall_mm": 433.2,
+        "extreme_heat_days": 0
+      },
+      "Sep": {
+        "avg_temp_c": 20.07,
+        "seasonal_rainfall_mm": 334.6,
+        "extreme_heat_days": 0
+      },
+      "Oct": {
+        "avg_temp_c": 20.65,
+        "seasonal_rainfall_mm": 89.5,
+        "extreme_heat_days": 1
+      },
+      "Nov": {
+        "avg_temp_c": 20.68,
+        "seasonal_rainfall_mm": 164.5,
+        "extreme_heat_days": 1
+      },
+      "Dec": {
+        "avg_temp_c": 21.07,
+        "seasonal_rainfall_mm": 225.2,
+        "extreme_heat_days": 1
+      }
+    }
+  },
+  "Tigray": {
+    "2021": {
+      "Jan": {
+        "avg_temp_c": 18.84,
+        "seasonal_rainfall_mm": 480.5,
+        "extreme_heat_days": 0
+      },
+      "Feb": {
+        "avg_temp_c": 18.86,
+        "seasonal_rainfall_mm": 554.7,
+        "extreme_heat_days": 0
+      },
+      "Mar": {
+        "avg_temp_c": 18.35,
+        "seasonal_rainfall_mm": 497.9,
+        "extreme_heat_days": 0
+      },
+      "Apr": {
+        "avg_temp_c": 17.52,
+        "seasonal_rainfall_mm": 539.7,
+        "extreme_heat_days": 0
+      },
+      "May": {
+        "avg_temp_c": 17.0,
+        "seasonal_rainfall_mm": 594.5,
+        "extreme_heat_days": 0
+      },
+      "Jun": {
+        "avg_temp_c": 16.47,
+        "seasonal_rainfall_mm": 481.9,
+        "extreme_heat_days": 0
+      },
+      "Jul": {
+        "avg_temp_c": 16.67,
+        "seasonal_rainfall_mm": 370.6,
+        "extreme_heat_days": 0
+      },
+      "Aug": {
+        "avg_temp_c": 17.73,
+        "seasonal_rainfall_mm": 244.3,
+        "extreme_heat_days": 0
+      },
+      "Sep": {
+        "avg_temp_c": 18.3,
+        "seasonal_rainfall_mm": 86.8,
+        "extreme_heat_days": 0
+      },
+      "Oct": {
+        "avg_temp_c": 18.35,
+        "seasonal_rainfall_mm": 125.2,
+        "extreme_heat_days": 0
+      },
+      "Nov": {
+        "avg_temp_c": 18.74,
+        "seasonal_rainfall_mm": 293.3,
+        "extreme_heat_days": 0
+      },
+      "Dec": {
+        "avg_temp_c": 18.76,
+        "seasonal_rainfall_mm": 377.8,
+        "extreme_heat_days": 0
+      }
+    },
+    "2022": {
+      "Jan": {
+        "avg_temp_c": 18.25,
+        "seasonal_rainfall_mm": 302.1,
+        "extreme_heat_days": 0
+      },
+      "Feb": {
+        "avg_temp_c": 17.88,
+        "seasonal_rainfall_mm": 352.8,
+        "extreme_heat_days": 0
+      },
+      "Mar": {
+        "avg_temp_c": 16.73,
+        "seasonal_rainfall_mm": 475.2,
+        "extreme_heat_days": 0
+      },
+      "Apr": {
+        "avg_temp_c": 16.48,
+        "seasonal_rainfall_mm": 459.1,
+        "extreme_heat_days": 0
+      },
+      "May": {
+        "avg_temp_c": 15.52,
+        "seasonal_rainfall_mm": 483.4,
+        "extreme_heat_days": 0
+      },
+      "Jun": {
+        "avg_temp_c": 15.1,
+        "seasonal_rainfall_mm": 571.7,
+        "extreme_heat_days": 0
+      },
+      "Jul": {
+        "avg_temp_c": 15.9,
+        "seasonal_rainfall_mm": 394.0,
+        "extreme_heat_days": 0
+      },
+      "Aug": {
+        "avg_temp_c": 16.25,
+        "seasonal_rainfall_mm": 325.3,
+        "extreme_heat_days": 0
+      },
+      "Sep": {
+        "avg_temp_c": 17.1,
+        "seasonal_rainfall_mm": 224.3,
+        "extreme_heat_days": 0
+      },
+      "Oct": {
+        "avg_temp_c": 17.9,
+        "seasonal_rainfall_mm": 85.3,
+        "extreme_heat_days": 0
+      },
+      "Nov": {
+        "avg_temp_c": 18.25,
+        "seasonal_rainfall_mm": 140.6,
+        "extreme_heat_days": 0
+      },
+      "Dec": {
+        "avg_temp_c": 18.15,
+        "seasonal_rainfall_mm": 225.4,
+        "extreme_heat_days": 0
+      }
+    },
+    "2023": {
+      "Jan": {
+        "avg_temp_c": 18.23,
+        "seasonal_rainfall_mm": 132.6,
+        "extreme_heat_days": 0
+      },
+      "Feb": {
+        "avg_temp_c": 18.5,
+        "seasonal_rainfall_mm": 185.0,
+        "extreme_heat_days": 0
+      },
+      "Mar": {
+        "avg_temp_c": 17.6,
+        "seasonal_rainfall_mm": 305.2,
+        "extreme_heat_days": 0
+      },
+      "Apr": {
+        "avg_temp_c": 16.8,
+        "seasonal_rainfall_mm": 377.7,
+        "extreme_heat_days": 1
+      },
+      "May": {
+        "avg_temp_c": 16.3,
+        "seasonal_rainfall_mm": 426.3,
+        "extreme_heat_days": 1
+      },
+      "Jun": {
+        "avg_temp_c": 15.38,
+        "seasonal_rainfall_mm": 454.8,
+        "extreme_heat_days": 1
+      },
+      "Jul": {
+        "avg_temp_c": 15.9,
+        "seasonal_rainfall_mm": 352.1,
+        "extreme_heat_days": 1
+      },
+      "Aug": {
+        "avg_temp_c": 16.27,
+        "seasonal_rainfall_mm": 235.8,
+        "extreme_heat_days": 0
+      },
+      "Sep": {
+        "avg_temp_c": 16.8,
+        "seasonal_rainfall_mm": 131.8,
+        "extreme_heat_days": 0
+      },
+      "Oct": {
+        "avg_temp_c": 17.52,
+        "seasonal_rainfall_mm": 50.9,
+        "extreme_heat_days": 0
+      },
+      "Nov": {
+        "avg_temp_c": 17.7,
+        "seasonal_rainfall_mm": 33.4,
+        "extreme_heat_days": 0
+      },
+      "Dec": {
+        "avg_temp_c": 18.27,
+        "seasonal_rainfall_mm": 77.2,
+        "extreme_heat_days": 0
+      }
+    },
+    "2024": {
+      "Jan": {
+        "avg_temp_c": 20.88,
+        "seasonal_rainfall_mm": 178.9,
+        "extreme_heat_days": 1
+      },
+      "Feb": {
+        "avg_temp_c": 21.35,
+        "seasonal_rainfall_mm": 198.4,
+        "extreme_heat_days": 1
+      },
+      "Mar": {
+        "avg_temp_c": 20.4,
+        "seasonal_rainfall_mm": 259.0,
+        "extreme_heat_days": 0
+      },
+      "Apr": {
+        "avg_temp_c": 20.03,
+        "seasonal_rainfall_mm": 279.6,
+        "extreme_heat_days": 0
+      },
+      "May": {
+        "avg_temp_c": 19.72,
+        "seasonal_rainfall_mm": 336.5,
+        "extreme_heat_days": 0
+      },
+      "Jun": {
+        "avg_temp_c": 19.07,
+        "seasonal_rainfall_mm": 305.8,
+        "extreme_heat_days": 0
+      },
+      "Jul": {
+        "avg_temp_c": 20.03,
+        "seasonal_rainfall_mm": 206.2,
+        "extreme_heat_days": 0
+      },
+      "Aug": {
+        "avg_temp_c": 20.37,
+        "seasonal_rainfall_mm": 132.5,
+        "extreme_heat_days": 0
+      },
+      "Sep": {
+        "avg_temp_c": 20.5,
+        "seasonal_rainfall_mm": 28.8,
+        "extreme_heat_days": 0
+      },
+      "Oct": {
+        "avg_temp_c": 20.32,
+        "seasonal_rainfall_mm": 40.0,
+        "extreme_heat_days": 0
+      },
+      "Nov": {
+        "avg_temp_c": 20.55,
+        "seasonal_rainfall_mm": 79.0,
+        "extreme_heat_days": 1
+      },
+      "Dec": {
+        "avg_temp_c": 20.68,
+        "seasonal_rainfall_mm": 132.1,
+        "extreme_heat_days": 1
+      }
+    }
+  },
+  "Somali": {
+    "2021": {
+      "Jan": {
+        "avg_temp_c": 30.88,
+        "seasonal_rainfall_mm": 92.6,
+        "extreme_heat_days": 67
+      },
+      "Feb": {
+        "avg_temp_c": 31.18,
+        "seasonal_rainfall_mm": 115.5,
+        "extreme_heat_days": 75
+      },
+      "Mar": {
+        "avg_temp_c": 30.42,
+        "seasonal_rainfall_mm": 134.7,
+        "extreme_heat_days": 74
+      },
+      "Apr": {
+        "avg_temp_c": 29.8,
+        "seasonal_rainfall_mm": 160.1,
+        "extreme_heat_days": 64
+      },
+      "May": {
+        "avg_temp_c": 29.4,
+        "seasonal_rainfall_mm": 169.2,
+        "extreme_heat_days": 69
+      },
+      "Jun": {
+        "avg_temp_c": 29.1,
+        "seasonal_rainfall_mm": 186.8,
+        "extreme_heat_days": 62
+      },
+      "Jul": {
+        "avg_temp_c": 29.67,
+        "seasonal_rainfall_mm": 162.4,
+        "extreme_heat_days": 65
+      },
+      "Aug": {
+        "avg_temp_c": 30.15,
+        "seasonal_rainfall_mm": 115.9,
+        "extreme_heat_days": 79
+      },
+      "Sep": {
+        "avg_temp_c": 30.4,
+        "seasonal_rainfall_mm": 75.2,
+        "extreme_heat_days": 72
+      },
+      "Oct": {
+        "avg_temp_c": 30.4,
+        "seasonal_rainfall_mm": 34.7,
+        "extreme_heat_days": 71
+      },
+      "Nov": {
+        "avg_temp_c": 30.57,
+        "seasonal_rainfall_mm": 39.9,
+        "extreme_heat_days": 69
+      },
+      "Dec": {
+        "avg_temp_c": 30.72,
+        "seasonal_rainfall_mm": 61.0,
+        "extreme_heat_days": 65
+      }
+    },
+    "2022": {
+      "Jan": {
+        "avg_temp_c": 27.1,
+        "seasonal_rainfall_mm": 111.5,
+        "extreme_heat_days": 33
+      },
+      "Feb": {
+        "avg_temp_c": 27.43,
+        "seasonal_rainfall_mm": 123.9,
+        "extreme_heat_days": 41
+      },
+      "Mar": {
+        "avg_temp_c": 26.72,
+        "seasonal_rainfall_mm": 202.6,
+        "extreme_heat_days": 51
+      },
+      "Apr": {
+        "avg_temp_c": 26.38,
+        "seasonal_rainfall_mm": 213.2,
+        "extreme_heat_days": 42
+      },
+      "May": {
+        "avg_temp_c": 25.86,
+        "seasonal_rainfall_mm": 252.2,
+        "extreme_heat_days": 33
+      },
+      "Jun": {
+        "avg_temp_c": 24.92,
+        "seasonal_rainfall_mm": 311.7,
+        "extreme_heat_days": 23
+      },
+      "Jul": {
+        "avg_temp_c": 25.27,
+        "seasonal_rainfall_mm": 207.2,
+        "extreme_heat_days": 17
+      },
+      "Aug": {
+        "avg_temp_c": 25.2,
+        "seasonal_rainfall_mm": 159.5,
+        "extreme_heat_days": 13
+      },
+      "Sep": {
+        "avg_temp_c": 25.83,
+        "seasonal_rainfall_mm": 98.4,
+        "extreme_heat_days": 24
+      },
+      "Oct": {
+        "avg_temp_c": 26.97,
+        "seasonal_rainfall_mm": 26.5,
+        "extreme_heat_days": 26
+      },
+      "Nov": {
+        "avg_temp_c": 26.83,
+        "seasonal_rainfall_mm": 52.3,
+        "extreme_heat_days": 22
+      },
+      "Dec": {
+        "avg_temp_c": 26.93,
+        "seasonal_rainfall_mm": 89.4,
+        "extreme_heat_days": 35
+      }
+    },
+    "2023": {
+      "Jan": {
+        "avg_temp_c": 29.77,
+        "seasonal_rainfall_mm": 109.0,
+        "extreme_heat_days": 57
+      },
+      "Feb": {
+        "avg_temp_c": 29.5,
+        "seasonal_rainfall_mm": 129.5,
+        "extreme_heat_days": 61
+      },
+      "Mar": {
+        "avg_temp_c": 29.57,
+        "seasonal_rainfall_mm": 91.4,
+        "extreme_heat_days": 50
+      },
+      "Apr": {
+        "avg_temp_c": 28.87,
+        "seasonal_rainfall_mm": 142.9,
+        "extreme_heat_days": 46
+      },
+      "May": {
+        "avg_temp_c": 28.27,
+        "seasonal_rainfall_mm": 173.8,
+        "extreme_heat_days": 44
+      },
+      "Jun": {
+        "avg_temp_c": 27.93,
+        "seasonal_rainfall_mm": 206.7,
+        "extreme_heat_days": 41
+      },
+      "Jul": {
+        "avg_temp_c": 28.25,
+        "seasonal_rainfall_mm": 216.6,
+        "extreme_heat_days": 56
+      },
+      "Aug": {
+        "avg_temp_c": 28.67,
+        "seasonal_rainfall_mm": 139.2,
+        "extreme_heat_days": 53
+      },
+      "Sep": {
+        "avg_temp_c": 28.92,
+        "seasonal_rainfall_mm": 88.5,
+        "extreme_heat_days": 54
+      },
+      "Oct": {
+        "avg_temp_c": 29.45,
+        "seasonal_rainfall_mm": 35.1,
+        "extreme_heat_days": 53
+      },
+      "Nov": {
+        "avg_temp_c": 29.48,
+        "seasonal_rainfall_mm": 63.3,
+        "extreme_heat_days": 49
+      },
+      "Dec": {
+        "avg_temp_c": 29.58,
+        "seasonal_rainfall_mm": 89.2,
+        "extreme_heat_days": 56
+      }
+    },
+    "2024": {
+      "Jan": {
+        "avg_temp_c": 30.4,
+        "seasonal_rainfall_mm": 72.6,
+        "extreme_heat_days": 79
+      },
+      "Feb": {
+        "avg_temp_c": 30.48,
+        "seasonal_rainfall_mm": 82.7,
+        "extreme_heat_days": 81
+      },
+      "Mar": {
+        "avg_temp_c": 30.3,
+        "seasonal_rainfall_mm": 52.1,
+        "extreme_heat_days": 45
+      },
+      "Apr": {
+        "avg_temp_c": 29.45,
+        "seasonal_rainfall_mm": 31.5,
+        "extreme_heat_days": 24
+      },
+      "May": {
+        "avg_temp_c": 28.05,
+        "seasonal_rainfall_mm": 61.1,
+        "extreme_heat_days": 24
+      },
+      "Jun": {
+        "avg_temp_c": 27.3,
+        "seasonal_rainfall_mm": 77.7,
+        "extreme_heat_days": 20
+      },
+      "Jul": {
+        "avg_temp_c": 27.63,
+        "seasonal_rainfall_mm": 81.6,
+        "extreme_heat_days": 30
+      },
+      "Aug": {
+        "avg_temp_c": 27.93,
+        "seasonal_rainfall_mm": 87.4,
+        "extreme_heat_days": 46
+      },
+      "Sep": {
+        "avg_temp_c": 28.68,
+        "seasonal_rainfall_mm": 46.0,
+        "extreme_heat_days": 49
+      },
+      "Oct": {
+        "avg_temp_c": 28.95,
+        "seasonal_rainfall_mm": 19.3,
+        "extreme_heat_days": 51
+      },
+      "Nov": {
+        "avg_temp_c": 29.8,
+        "seasonal_rainfall_mm": 46.0,
+        "extreme_heat_days": 77
+      },
+      "Dec": {
+        "avg_temp_c": 30.44,
+        "seasonal_rainfall_mm": 60.8,
+        "extreme_heat_days": 82
+      }
+    }
+  }
+}
