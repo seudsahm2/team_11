@@ -37,18 +37,24 @@ class CropYieldPredictor:
         return {}
 
     def _load_production_model_if_available(self):
-        """Attempts to load serialized production model pipeline from models/."""
-        if MODEL_PATH.exists():
-            try:
-                import joblib
-                self.model = joblib.load(MODEL_PATH)
-                self.is_production_model = True
-            except Exception as e:
-                self.model = None
-                self.is_production_model = False
-        else:
-            self.model = None
-            self.is_production_model = False
+        """Attempts to load serialized production model pipeline from app/assets or models/."""
+        candidate_paths = [
+            ASSETS_DIR / "final_model.joblib",
+            MODEL_PATH,
+            PROJECT_DIR / "final_model.joblib",
+            BASE_DIR / "final_model.joblib"
+        ]
+        for p in candidate_paths:
+            if p.exists():
+                try:
+                    import joblib
+                    self.model = joblib.load(p)
+                    self.is_production_model = True
+                    return
+                except Exception as e:
+                    continue
+        self.model = None
+        self.is_production_model = False
 
     def get_weather_context(self, region: str, year: int, planting_month: str) -> dict:
         """Looks up growing season weather automatically without requiring user input."""
@@ -153,7 +159,7 @@ class CropYieldPredictor:
         """
         region = inputs["region"]
         crop_type = inputs["crop_type"]
-        year = int(inputs["survey_year"])
+        year = int(inputs.get("survey_year", 2024))
         month = inputs["planting_month"]
         farm_size = float(inputs.get("farm_size_ha", 1.0))
 

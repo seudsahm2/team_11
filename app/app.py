@@ -780,7 +780,7 @@ with t_governance:
 
     # 2. Publication Figure Gallery
     st.markdown("#### 🖼️ Deliverable C Publication Gallery (13 High-Res Artifacts)")
-    fig_dir = project_dir / "figures"
+    fig_dir = project_dir / "figures" if (project_dir / "figures").exists() else app_dir / "assets" / "figures"
     fig_opts = {
         "fig13_yield_tier_confusion_matrix.png": "Figure 13: Smallholder Yield & Food Security Tier Confusion Matrix (15,090 Plots)",
         "fig10_model_comparison.png": "Figure 10: Model Benchmark Comparison (Baseline vs. Production)",
@@ -793,6 +793,8 @@ with t_governance:
 
     fig_sel = st.selectbox("Inspect Publication Figure:", list(fig_opts.keys()), format_func=lambda k: fig_opts[k])
     p_fig = fig_dir / fig_sel
+    if not p_fig.exists():
+        p_fig = app_dir / "assets" / "figures" / fig_sel
     if p_fig.exists():
         st.image(str(p_fig), caption=fig_opts[fig_sel], use_container_width=True)
     else:
