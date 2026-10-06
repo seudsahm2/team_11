@@ -973,7 +973,7 @@ with tab_climate:
 
         s1, s2, s3 = st.columns(3)
         s1.metric("Normal Harvest", f"{base_bags:.0f} Bags", f"{base_yield:.2f} t/ha")
-        s2.metric("Stress-Tested Harvest", f"{shocked_bags:.0f} Bags", f"{shocked_yield:.2f} t/ha", delta=f"{shocked_yield - base_yield:.2f} t/ha")
+        s2.metric("Stress-Tested Harvest", f"{shocked_bags:.0f} Bags", delta=f"{shocked_yield - base_yield:+.2f} t/ha")
         s3.metric("Household Income Impact", f"{shocked_net:,.0f} ETB", delta=f"-{loss_birr:,.0f} ETB", delta_color="inverse")
 
         # Resilience Card
