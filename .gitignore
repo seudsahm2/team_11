@@ -69,7 +69,9 @@ Thumbs.db
 .vscode/
 *.swp
 *.swo
-
 figures/*
+!figures/figure_captions.md
 models/*
+!models/final_model.joblib
 submissions/*
+!submission/team_11_submission.csv
