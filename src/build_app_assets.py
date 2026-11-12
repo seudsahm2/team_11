@@ -124,6 +124,9 @@ def main() -> None:
             improved_seed_rate=("improved_seed_used", "mean"),
             pest_rate=("pest_disease_flag", "mean"),
             mean_yield=("yield_tons_per_ha", "mean"),
+            yield_p10=("yield_tons_per_ha", lambda s: s.quantile(0.10)),
+            yield_p50=("yield_tons_per_ha", "median"),
+            yield_p90=("yield_tons_per_ha", lambda s: s.quantile(0.90)),
             n_plots=("plot_id", "count"),
         )
         .reset_index()
@@ -190,8 +193,8 @@ def main() -> None:
         "test_year": int(train["survey_year"].max()),
         "n_train": int((~is_last).sum()),
         "n_test": int(is_last.sum()),
-        "rmse": round(float(root_mean_squared_error(y[is_last], oot_pred)), 4),
-        "r2": round(float(r2_score(y[is_last], oot_pred)), 4),
+        "rmse": round(float(root_mean_squared_error(y[is_last], oot_pred)), 6),
+        "r2": round(float(r2_score(y[is_last], oot_pred)), 6),
     }
 
     true_t, pred_t = to_tier(y), to_tier(oof)

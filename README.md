@@ -265,7 +265,7 @@ streamlit run app/app.py
 
 ## 9. Model Performance (honest, out-of-sample)
 
-All figures are 5-fold **out-of-fold** results (each plot scored by a model that never saw it), produced by `src/build_app_assets.py` and shown live in the app's *System Audit* tab.
+All figures are 5-fold **out-of-fold** results (each plot scored by a model that never saw it), produced by `src/build_app_assets.py` and shown live in the app's *Model audit* tab.
 
 | Metric | Value |
 | :--- | :---: |

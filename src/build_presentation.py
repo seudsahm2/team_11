@@ -308,7 +308,7 @@ def build_slide_1(prs):
     add_bullet_point(tf1, "Pre-Harvest Forecast", "Accurately predict smallholder crop yield (yield_tons_per_ha) prior to harvest across five agro-ecological zones (Oromia, Amhara, SNNPR, Tigray, Somali).", pt_size=10, is_first=True)
     add_bullet_point(tf1, "5 Target Crops", "Forecasts Teff, Wheat, Maize, Sorghum, and Barley across diverse elevation bands (400m to 3,600m).", pt_size=10, space_before=6)
     add_bullet_point(tf1, "High Volatility", "Extreme seasonal rain anomalies and soil heterogeneity drive up to 4× yield dispersion between highland and lowland plots.", pt_size=10, space_before=6)
-    add_bullet_point(tf1, "End-to-End System", "Engineered from raw tri-dataset ingestion into AgriYield™ Pro Enterprise—delivering live decision support across 4 dedicated workspaces.", pt_size=10, space_before=6)
+    add_bullet_point(tf1, "End-to-End System", "Engineered from raw tri-dataset ingestion into the AgriYield app—delivering live decision support across 4 dedicated workspaces.", pt_size=10, space_before=6)
 
     # Card 2: Tri-Dataset Ecosystem
     add_container_card(slide, start_x + (col_w + gap_x), body_y, col_w, body_h, "2. Tri-Dataset Ecosystem")
@@ -442,7 +442,7 @@ def build_slide_3(prs):
         "Finding 1: The Yield vs. Revenue Paradox (Economic Inversion)",
         "Maize achieves the highest physical yield (mean 3.90 t/ha, peaking at 4.80 t/ha in SNNPR), but Teff generates the highest gross revenue per hectare (152,301 Birr/ha vs. 114,336 Birr/ha for Maize).\n"
         "• Agronomic Driver: Teff commands a 2.6× market price premium (7,652 vs. 2,927 Birr/quintal) due to cultural staple status and inelastic urban demand, proving smallholders rationally prioritize financial return over biological tonnage.\n"
-        "• Direct UI Integration: AgriYield™ Pro connects directly to live regional quintal benchmarks and translates farm hectares into local Ethiopian units (1 ha ≈ 4 Timad) with automated P&L cash-flow calculations.",
+        "• Direct UI Integration: AgriYield connects directly to live regional quintal benchmarks and translates farm hectares into local Ethiopian units (1 ha ≈ 4 Timad) with automated P&L cash-flow calculations.",
         pt_size=9.8, is_first=True
     )
 
@@ -537,7 +537,7 @@ def build_slide_5(prs):
         slide,
         badge_text="Deliverables E & G | Operational UI Platform & Live Demo",
         title_text="Decision Support Platform: Interactive UI & Operational Impact",
-        subtitle_text="AgriYield™ Pro: Automatic Weather & Price Lookup, Real-Time P&L, Cooperative Planning and Climate Stress Testing"
+        subtitle_text="AgriYield: Automatic Weather & Price Lookup, Real-Time P&L, Cooperative Planning and Climate Stress Testing"
     )
     add_footer(slide, 5)
 
@@ -555,7 +555,7 @@ def build_slide_5(prs):
     add_kpi_card(slide, start_x + (kpi_w + gap_x) * 2, top_y, kpi_w, kpi_h,
                  "100%", "App ↔ Submission Parity", "Same features as training (tested)", ACCENT_GOLD)
     add_kpi_card(slide, start_x + (kpi_w + gap_x) * 3, top_y, kpi_w, kpi_h,
-                 "4 Workspaces", "Streamlined User Navigation", "Farmgate, Union, Radar & Audit", ACCENT_BLUE)
+                 "4 Workspaces", "Streamlined User Navigation", "Farm, Cooperative, Climate & Audit", ACCENT_BLUE)
 
     # 2 Columns (Food Security Confusion Matrix Left, UI Capabilities & Live Demo Flow Right)
     body_y = Inches(2.90)
@@ -578,7 +578,7 @@ def build_slide_5(prs):
     add_bullet_point(tf_d, "91.7% Subsistence Precision", "A dependable signal for targeting safety-net and index-insurance support (82.7% recall).", pt_size=9.2, space_before=3)
 
     # Right Column: UI Capabilities & Live Demo Script
-    add_container_card(slide, right_x, body_y, right_w, body_h, "2. AgriYield™ Pro Capabilities & Live Demo Script")
+    add_container_card(slide, right_x, body_y, right_w, body_h, "2. AgriYield Capabilities & Live Demo Script")
 
     tb_r = slide.shapes.add_textbox(right_x + Inches(0.2), body_y + Inches(0.52), right_w - Inches(0.4), body_h - Inches(0.60))
     tf_r = tb_r.text_frame
@@ -615,8 +615,8 @@ def build_slide_5(prs):
     add_bullet_point(
         tf_r,
         "🎯 2-Minute Pitch Live Demo Flow",
-        "• Minute 1 (Farmgate Studio): Click 'Arsi Maize (2.5 ha)' preset -> show the auto-looked-up weather & price strip -> move the fertilizer slider to show the live profit peak.\n"
-        "• Minute 2 (Union Hub, Stress Radar & Audit): Cooperative totals -> heatwave on Oromia wheat vs Amhara maize -> live compliance checks & 83.1% out-of-fold tier matrix.",
+        "• Minute 1 (Farm forecast): Click 'Arsi maize · 2.5 ha' -> show the benchmark gauge and looked-up season weather & price -> move the fertilizer slider to show the live profit peak.\n"
+        "• Minute 2 (Cooperative, Climate stress & Model audit): Cooperative totals -> heatwave on Oromia wheat vs Amhara maize -> live compliance checks & 83.1% out-of-fold tier matrix.",
         pt_size=9.5, space_before=4
     )
 
