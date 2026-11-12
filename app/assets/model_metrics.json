@@ -1,0 +1,148 @@
+{
+  "model_family": "HistGradientBoostingRegressor",
+  "n_train_plots": 15090,
+  "n_test_plots": 3750,
+  "n_features": 20,
+  "weather_features": [
+    "weather_season_mean_temp",
+    "weather_season_rainfall_mm",
+    "weather_season_heat_days",
+    "weather_temp_anomaly_c",
+    "weather_rain_discrepancy_ratio",
+    "altitude_temp_index"
+  ],
+  "cv": {
+    "folds": 5,
+    "rmse": 0.4757,
+    "mae": 0.3482,
+    "r2": 0.8845,
+    "fold_rmse": [
+      0.4665,
+      0.4902,
+      0.4683,
+      0.4728,
+      0.4801
+    ],
+    "baseline_mean_rmse": 1.3999,
+    "error_reduction_vs_baseline": 0.6602,
+    "no_weather_rmse": 0.5585
+  },
+  "out_of_time": {
+    "train_years": [
+      2021,
+      2022,
+      2023
+    ],
+    "test_year": 2024,
+    "n_train": 11277,
+    "n_test": 3813,
+    "rmse": 0.4845,
+    "r2": 0.8859
+  },
+  "tiers": {
+    "labels": [
+      "Subsistence (<2.0)",
+      "Standard (2.0\u20133.5)",
+      "Commercial (>3.5)"
+    ],
+    "edges_t_ha": [
+      2.0,
+      3.5
+    ],
+    "confusion_matrix": [
+      [
+        4049,
+        843,
+        2
+      ],
+      [
+        363,
+        5285,
+        564
+      ],
+      [
+        4,
+        771,
+        3209
+      ]
+    ],
+    "accuracy": 0.8312,
+    "extreme_errors": 6,
+    "subsistence_precision": 0.9169,
+    "subsistence_recall": 0.8273
+  },
+  "by_crop": {
+    "barley": {
+      "rmse": 0.411,
+      "mae": 0.3,
+      "mean_yield": 2.467,
+      "n": 2934
+    },
+    "maize": {
+      "rmse": 0.63,
+      "mae": 0.478,
+      "mean_yield": 3.904,
+      "n": 3059
+    },
+    "sorghum": {
+      "rmse": 0.437,
+      "mae": 0.332,
+      "mean_yield": 2.611,
+      "n": 3006
+    },
+    "teff": {
+      "rmse": 0.361,
+      "mae": 0.267,
+      "mean_yield": 2.003,
+      "n": 3015
+    },
+    "wheat": {
+      "rmse": 0.49,
+      "mae": 0.36,
+      "mean_yield": 2.802,
+      "n": 3076
+    }
+  },
+  "by_region": {
+    "Amhara": {
+      "rmse": 0.51,
+      "mae": 0.388,
+      "mean_yield": 3.129,
+      "n": 2979
+    },
+    "Oromia": {
+      "rmse": 0.52,
+      "mae": 0.391,
+      "mean_yield": 3.073,
+      "n": 2969
+    },
+    "SNNPR": {
+      "rmse": 0.517,
+      "mae": 0.382,
+      "mean_yield": 3.041,
+      "n": 2983
+    },
+    "Somali": {
+      "rmse": 0.284,
+      "mae": 0.203,
+      "mean_yield": 1.464,
+      "n": 3069
+    },
+    "Tigray": {
+      "rmse": 0.506,
+      "mae": 0.381,
+      "mean_yield": 3.131,
+      "n": 3090
+    }
+  },
+  "effects": {
+    "improved_seed_lift": 0.1944,
+    "pest_loss": 0.2685
+  },
+  "submission": {
+    "rows": 3750,
+    "nulls": 0,
+    "prediction_column": "predicted_yield_tons_per_ha",
+    "max_abs_diff_vs_shipped_model": 0.0
+  }
+}

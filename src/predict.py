@@ -44,10 +44,16 @@ def generate_predictions(model_path: str = 'models/final_model.joblib',
     raw_preds = model.predict(X_test)
     clipped_preds = np.clip(raw_preds, 0.1, 9.0).round(4)
 
+    # Column names and plot order must match the official template exactly
     sub_df = pd.DataFrame({
         'plot_id': test_df['plot_id'],
-        'yield_tons_per_ha': clipped_preds
+        'predicted_yield_tons_per_ha': clipped_preds
     })
+    template_path = os.path.join(os.path.dirname(test_path), '..', 'raw', 'submission_template.csv')
+    if os.path.exists(template_path):
+        template = pd.read_csv(template_path)
+        assert list(sub_df.columns) == list(template.columns), f"Columns {list(sub_df.columns)} != template"
+        assert (sub_df['plot_id'].values == template['plot_id'].values).all(), "plot_id order differs from template"
 
     os.makedirs(os.path.dirname(sub_out), exist_ok=True)
     sub_df.to_csv(sub_out, index=False)

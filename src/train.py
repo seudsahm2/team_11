@@ -45,18 +45,22 @@ TARGET = 'yield_tons_per_ha'
 
 
 def build_pipeline():
-    """Builds a leakage-free Scikit-Learn preprocessing and modeling pipeline."""
+    """
+    Builds the leakage-free production pipeline.
+    Configuration is the RandomizedSearchCV winner from notebook 04 (D6) and reproduces
+    the shipped models/final_model.joblib exactly.
+    """
     preprocessor = ColumnTransformer(
         transformers=[
-            ('num', StandardScaler(), NUMERIC_FEATURES),
-            ('cat', OneHotEncoder(drop='first', sparse_output=False, handle_unknown='ignore'), CATEGORICAL_FEATURES)
+            ('cat', OneHotEncoder(sparse_output=False, handle_unknown='ignore'), CATEGORICAL_FEATURES),
+            ('num', StandardScaler(), NUMERIC_FEATURES)
         ]
     )
 
     model = HistGradientBoostingRegressor(
-        max_iter=120,
-        max_depth=9,
-        learning_rate=0.08,
+        max_iter=100,
+        max_depth=8,
+        learning_rate=0.1,
         min_samples_leaf=20,
         l2_regularization=0.1,
         random_state=42

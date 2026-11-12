@@ -4,7 +4,7 @@ Team 11 | Qiyas / IADE Training Program — Addis Ababa University Hackathon 202
 
 Generates the official 5-slide competition pitch deck in presentation/team_11_slides.pptx
 and automatically exports to presentation/team_11_slides.pdf if PowerPoint COM is available.
-Incorporates latest backend modeling enhancements (Tri-Ensemble Blend) and executive UI/UX upgrades (AgriYield Pro Enterprise).
+All model metrics are 5-fold out-of-fold figures from app/assets/model_metrics.json (src/build_app_assets.py).
 """
 
 import os
@@ -473,7 +473,7 @@ def build_slide_4(prs):
         slide,
         badge_text="Deliverable D | Machine Learning & Benchmarking",
         title_text="Predictive Modeling & Empirical Validation",
-        subtitle_text="Model Progression, 5-Fold Cross-Validation, Tri-Ensemble Blend, and Weather Ablation Study (Rule 5)"
+        subtitle_text="Model Progression, 5-Fold Cross-Validation, Out-of-Time Test, and Weather Ablation Study (Rule 5)"
     )
     add_footer(slide, 4)
 
@@ -485,13 +485,13 @@ def build_slide_4(prs):
     start_x = Inches(0.6)
 
     add_kpi_card(slide, start_x, top_y, kpi_w, kpi_h,
-                 "0.4601 t/ha", "Tri-Ensemble 5-Fold CV RMSE", "HistGB + LGBM + XGBoost Blend", PRIMARY_GREEN)
+                 "0.476 t/ha", "5-Fold Out-of-Fold CV RMSE", "Tuned HistGradientBoosting", PRIMARY_GREEN)
     add_kpi_card(slide, start_x + (kpi_w + gap_x), top_y, kpi_w, kpi_h,
-                 "0.906", "Tri-Ensemble R² Score", "Explains 90.6% of Yield Variance", PRIMARY_GREEN)
+                 "0.885", "Out-of-Fold R² Score", "Explains 88.5% of Yield Variance", PRIMARY_GREEN)
     add_kpi_card(slide, start_x + (kpi_w + gap_x) * 2, top_y, kpi_w, kpi_h,
-                 "-70.9%", "Error Reduction vs. Baseline", "Baseline 1.401 → Tuned 0.408 t/ha", ACCENT_GOLD)
+                 "-66.0%", "Error Reduction vs. Baseline", "Baseline 1.400 → Production 0.476 t/ha", ACCENT_GOLD)
     add_kpi_card(slide, start_x + (kpi_w + gap_x) * 3, top_y, kpi_w, kpi_h,
-                 "+14.77%", "Ablation Error Spike (No Weather)", "Validates Rule 5 Weather Signal", ACCENT_BLUE)
+                 "+17.4%", "Error Without Weather Features", "0.476 → 0.559 t/ha (Rule 5)", ACCENT_BLUE)
 
     # 2 Columns (Model Benchmarking Left, Features & Ablation Right)
     body_y = Inches(2.90)
@@ -508,10 +508,10 @@ def build_slide_4(prs):
     tb_l = slide.shapes.add_textbox(start_x + Inches(0.2), body_y + Inches(2.45), col_w - Inches(0.4), Inches(1.35))
     tf_l = tb_l.text_frame
     tf_l.word_wrap = True
-    add_bullet_point(tf_l, "Dummy Regressor (Mean)", "5-Fold CV: 1.401 t/ha | Holdout: 1.413 t/ha | R² -0.000 (Predicts global mean 2.768 t/ha).", pt_size=9.5, is_first=True)
-    add_bullet_point(tf_l, "Ridge Regression (Linear)", "5-Fold CV: 0.785 t/ha | Holdout: 0.895 t/ha | R² 0.599 (Misses non-linear thermal/altitude curves).", pt_size=9.5, space_before=3)
-    add_bullet_point(tf_l, "Random Forest Ensemble", "5-Fold CV: 0.448 t/ha | Holdout: 0.588 t/ha | R² 0.827 (Captures non-linear thresholds).", pt_size=9.5, space_before=3)
-    add_bullet_point(tf_l, "Production Tri-Ensemble", "5-Fold CV: 0.4601 t/ha | R² 0.906 (Combines HistGB, LightGBM, and XGBoost via VotingRegressor for extra +2.5% accuracy).", pt_size=9.5, space_before=3)
+    add_bullet_point(tf_l, "Dummy Regressor (Mean)", "5-Fold CV: 1.400 t/ha | Holdout: 1.413 t/ha | R² 0.000 (Predicts global mean 2.768 t/ha).", pt_size=9.5, is_first=True)
+    add_bullet_point(tf_l, "Ridge Regression (Linear)", "5-Fold CV: 0.908 t/ha | Holdout: 0.895 t/ha | R² 0.599 (Misses non-linear thermal/altitude curves).", pt_size=9.5, space_before=3)
+    add_bullet_point(tf_l, "Random Forest Ensemble", "5-Fold CV: 0.580 t/ha | Holdout: 0.588 t/ha | R² 0.827 (Captures non-linear thresholds).", pt_size=9.5, space_before=3)
+    add_bullet_point(tf_l, "Production: Tuned HistGradientBoosting", "5-Fold CV: 0.476 t/ha | MAE 0.348 | R² 0.885 (statistically tied with LightGBM 0.478; chosen for speed and a pure scikit-learn pipeline).", pt_size=9.5, space_before=3)
 
     # Right Column: Feature Importance & Ablation
     add_container_card(slide, right_x, body_y, col_w, body_h, "2. Feature Importance & Validation Rigor")
@@ -522,9 +522,9 @@ def build_slide_4(prs):
     tb_r = slide.shapes.add_textbox(right_x + Inches(0.2), body_y + Inches(2.45), col_w - Inches(0.4), Inches(1.35))
     tf_r = tb_r.text_frame
     tf_r.word_wrap = True
-    add_bullet_point(tf_r, "Mandatory Weather Ablation (Rule 5)", "Omitting weather derivations degraded 5-fold CV RMSE from 0.474 to 0.544 t/ha (+14.77% error jump), confirming climate signals provide indispensable predictive power.", pt_size=9.5, is_first=True)
-    add_bullet_point(tf_r, "5-Fold CV Stability", "Cross-validation score of 0.4742 ± 0.0113 t/ha demonstrates remarkable variance stability across all 5 regional folds without spatial overfitting.", pt_size=9.5, space_before=3)
-    add_bullet_point(tf_r, "Out-of-Time 2024 Generalization", "Trained on 2021–2023 (11,277 plots) and tested on 2024 (3,813 plots) achieved 0.4812 t/ha RMSE (R² = 0.884), proving temporal robustness with zero concept drift.", pt_size=9.5, space_before=3)
+    add_bullet_point(tf_r, "Mandatory Weather Ablation (Rule 5)", "Omitting weather-derived features raises 5-fold CV RMSE from 0.476 to 0.559 t/ha (+17.4%), confirming that seasonal climate carries real predictive signal.", pt_size=9.5, is_first=True)
+    add_bullet_point(tf_r, "5-Fold CV Stability", "Fold RMSEs of 0.467–0.490 t/ha (±0.009) show stable generalization across all 5 random folds.", pt_size=9.5, space_before=3)
+    add_bullet_point(tf_r, "Out-of-Time 2024 Generalization", "Trained on 2021–2023 (11,277 plots) and tested on 2024 (3,813 plots): 0.485 t/ha RMSE (R² = 0.886), with no material temporal drift.", pt_size=9.5, space_before=3)
 
 
 def build_slide_5(prs):
@@ -537,7 +537,7 @@ def build_slide_5(prs):
         slide,
         badge_text="Deliverables E & G | Operational UI Platform & Live Demo",
         title_text="Decision Support Platform: Interactive UI & Operational Impact",
-        subtitle_text="AgriYield™ Pro Enterprise: Zero-Effort Background Ingestion, Real-Time P&L, and 15-Farm Union Logistics"
+        subtitle_text="AgriYield™ Pro: Automatic Weather & Price Lookup, Real-Time P&L, Cooperative Planning and Climate Stress Testing"
     )
     add_footer(slide, 5)
 
@@ -551,9 +551,9 @@ def build_slide_5(prs):
     add_kpi_card(slide, start_x, top_y, kpi_w, kpi_h,
                  "Live Streamlit", "Production Decision Platform", "Launch: streamlit run app/app.py", PRIMARY_GREEN)
     add_kpi_card(slide, start_x + (kpi_w + gap_x), top_y, kpi_w, kpi_h,
-                 "86.9%", "Food Security Tier Accuracy", "0.0% Extreme Off-Diagonal Errors", PRIMARY_GREEN)
+                 "83.1%", "Food Security Tier Accuracy", "Out-of-fold · 0.04% extreme errors", PRIMARY_GREEN)
     add_kpi_card(slide, start_x + (kpi_w + gap_x) * 2, top_y, kpi_w, kpi_h,
-                 "<300 ms", "Cached App Inference Latency", "Zero-Lag Slider Simulation", ACCENT_GOLD)
+                 "100%", "App ↔ Submission Parity", "Same features as training (tested)", ACCENT_GOLD)
     add_kpi_card(slide, start_x + (kpi_w + gap_x) * 3, top_y, kpi_w, kpi_h,
                  "4 Workspaces", "Streamlined User Navigation", "Farmgate, Union, Radar & Audit", ACCENT_BLUE)
 
@@ -573,9 +573,9 @@ def build_slide_5(prs):
     tb_d = slide.shapes.add_textbox(start_x + Inches(0.18), body_y + Inches(2.65), left_w - Inches(0.36), Inches(1.15))
     tf_d = tb_d.text_frame
     tf_d.word_wrap = True
-    add_bullet_point(tf_d, "86.9% Stratified Tier Accuracy", "13,115 of 15,090 plots fall on the exact diagonal tier (<2.0, 2.0–3.5, >3.5 t/ha).", pt_size=9.2, is_first=True)
-    add_bullet_point(tf_d, "0.0% Extreme Error Rate", "Zero subsistence plots misdiagnosed as commercial surplus (0/4,894); zero false alarms.", pt_size=9.2, space_before=3)
-    add_bullet_point(tf_d, "93.9% Subsistence Precision", "Dependable trigger for micro-insurance payouts and safety-net grain distribution.", pt_size=9.2, space_before=3)
+    add_bullet_point(tf_d, "83.1% Tier Accuracy (Out-of-Fold)", "12,543 of 15,090 plots land in their true tier (<2.0, 2.0–3.5, >3.5 t/ha), each scored by a model that never saw it.", pt_size=9.2, is_first=True)
+    add_bullet_point(tf_d, "0.04% Extreme Error Rate", "Only 6 of 15,090 plots confused between subsistence and commercial; errors fall in neighbouring tiers.", pt_size=9.2, space_before=3)
+    add_bullet_point(tf_d, "91.7% Subsistence Precision", "A dependable signal for targeting safety-net and index-insurance support (82.7% recall).", pt_size=9.2, space_before=3)
 
     # Right Column: UI Capabilities & Live Demo Script
     add_container_card(slide, right_x, body_y, right_w, body_h, "2. AgriYield™ Pro Capabilities & Live Demo Script")
@@ -587,36 +587,36 @@ def build_slide_5(prs):
     add_bullet_point(
         tf_r,
         "1. Zero-Effort Background Ingestion (Rule 5 Compliant)",
-        "Farmers enter only agronomic inputs (Region, Crop, Farm Size in ha or Timad, DAP/Urea); seasonal climate variables (rainfall, mean temperature, heat days) and ECX market prices are automatically resolved in the background.",
+        "Users enter only plot inputs (region, crop, season, farm size in ha/Timad, fertilizer, seed); seasonal climate variables (rainfall, mean temperature, heat days, temperature anomaly) and cleaned regional market prices are looked up automatically from the competition tables.",
         pt_size=9.5, is_first=True
     )
 
     add_bullet_point(
         tf_r,
         "2. Real-Time Economic P&L Translation",
-        "Converts biological yield (t/ha) into audited household cash flow: Gross Revenue, Fertilizer, Certified Seed, and Net Family Profit in Ethiopian Birr (ETB), demonstrating household economic lift.",
+        "Converts predicted yield (t/ha) into household cash flow: gross revenue (yield × ha × 10 × price), fertilizer, seed and labor costs (editable assumptions), and net profit in Birr.",
         pt_size=9.5, space_before=4
     )
 
     add_bullet_point(
         tf_r,
         "3. Dynamic 'What-If' Simulation (Dual-Axis Plotly)",
-        "Interactive slider curves plot harvest bags vs. net profit across fertilizer levels, automatically pinpointing the peak profit inflection point (e.g., 80 kg/ha) to prevent costly nitrogen wastage.",
+        "Each point on the fertilizer curve is a fresh model prediction; the app pinpoints the profit-maximizing rate and quantifies the model-estimated seed and pest effects for that exact plot.",
         pt_size=9.5, space_before=4
     )
 
     add_bullet_point(
         tf_r,
-        "4. Cooperative Command Hub (15-Plot Union Fleet)",
-        "Multi-plot batch processing aggregates union member harvest totals, 100-kg jute bag storage demands, 40-Ton Isuzu freight fleets needed, and bankable collateral Loan-to-Value (LTV) ratios.",
+        "4. Cooperative Hub & Climate Stress Radar",
+        "Cooperatives upload a plot CSV (or use 15 real unseen survey plots) to get harvest totals, bag and truck needs and revenue. The stress radar re-runs the model under heatwave and drought shocks on 200 real plots per region and crop.",
         pt_size=9.5, space_before=4
     )
 
     add_bullet_point(
         tf_r,
         "🎯 2-Minute Pitch Live Demo Flow",
-        "• Minute 1 (Farmgate Studio): Click 'Arsi Maize (2.5 ha)' preset -> observe auto climate/price resolution -> adjust DAP/Urea slider to show live profit peak.\n"
-        "• Minute 2 (Union Hub & Audit): Switch to Cooperative Hub -> review 15-plot grain totals & truck fleet -> review 86.9% food security tier audit matrix.",
+        "• Minute 1 (Farmgate Studio): Click 'Arsi Maize (2.5 ha)' preset -> show the auto-looked-up weather & price strip -> move the fertilizer slider to show the live profit peak.\n"
+        "• Minute 2 (Union Hub, Stress Radar & Audit): Cooperative totals -> heatwave on Oromia wheat vs Amhara maize -> live compliance checks & 83.1% out-of-fold tier matrix.",
         pt_size=9.5, space_before=4
     )
 

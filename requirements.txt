@@ -1,10 +1,14 @@
-pandas>=2.0.0
-numpy>=1.24.0
-scikit-learn>=1.3.0
-xgboost>=2.0.0
-lightgbm>=4.0.0
-matplotlib>=3.7.0
-seaborn>=0.12.0
-plotly>=5.15.0
-streamlit>=1.28.0
-joblib>=1.3.0
+# Pinned to the environment that produced models/final_model.joblib.
+# scikit-learn must match exactly: the serialized pipeline is version-specific.
+pandas==3.0.6
+numpy==2.5.3
+scikit-learn==1.9.1
+scipy==1.18.1
+joblib==1.6.0
+xgboost==3.4.1
+lightgbm==4.7.0
+matplotlib==3.11.2
+seaborn==0.13.2
+plotly==7.1.0
+streamlit==1.65.0
+python-pptx==1.0.2

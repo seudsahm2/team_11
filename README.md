@@ -45,7 +45,11 @@ team_11/
 │   ├── cleaning.py                        # Cleaning & standardization functions
 │   ├── features.py                        # Weather aggregation & feature engineering logic
 │   ├── train.py                           # Model training and hyperparameter tuning routines
-│   └── predict.py                         # Test inference and submission generation
+│   ├── predict.py                         # Test inference and submission generation
+│   ├── build_app_assets.py                # App lookups, out-of-fold metrics & Figure 13
+│   └── build_presentation.py              # Generates presentation/team_11_slides.pptx
+├── tests/
+│   └── test_app_parity.py                 # App features/predictions == training pipeline
 ├── models/
 │   └── final_model.joblib                 # Serialized production pipeline & trained model
 ├── figures/
@@ -57,6 +61,7 @@ team_11/
 │   └── D_model_evaluation.md              # Cross-validation, weather ablation & error analysis
 ├── app/
 │   ├── app.py                             # Interactive Streamlit prediction dashboard
+│   ├── predictor.py                       # Feature builder + model adapter (mirrors src/features.py)
 │   ├── requirements.txt                   # App-specific runtime requirements
 │   └── assets/                            # Bundled weather/price lookup tables & model artifact
 └── presentation/
@@ -242,8 +247,39 @@ To reproduce all results end-to-end:
 3. `notebooks/03_visualizations.ipynb`: Saves `fig01.png` through `fig12.png` into `figures/`.
 4. `notebooks/04_modeling_and_evaluation.ipynb`: Trains models, evaluates metrics, and exports `submission/team_11_submission.csv` and `models/final_model.joblib`.
 
+### Script Pipeline (equivalent to notebook 04)
+```bash
+python src/train.py              # 5-fold CV + fit -> models/final_model.joblib (reproduces the shipped model)
+python src/predict.py            # -> submission/team_11_submission.csv (validated against the template)
+python src/build_app_assets.py   # -> app/assets/* lookups, model_metrics.json, Figure 13
+python tests/test_app_parity.py  # verifies the app builds exactly the training features
+```
+
 ### Launching the Interactive Demo App
 ```bash
+pip install -r app/requirements.txt
 streamlit run app/app.py
 ```
-*Note: A live link or local run demonstration will be presented during the final pitch.*
+
+---
+
+## 9. Model Performance (honest, out-of-sample)
+
+All figures are 5-fold **out-of-fold** results (each plot scored by a model that never saw it), produced by `src/build_app_assets.py` and shown live in the app's *System Audit* tab.
+
+| Metric | Value |
+| :--- | :---: |
+| Production model | Tuned `HistGradientBoostingRegressor` pipeline |
+| CV RMSE / MAE / R² | **0.476 t/ha / 0.348 t/ha / 0.885** |
+| Mean-baseline RMSE | 1.400 t/ha (−66% error) |
+| Out-of-time (train 2021–23 → test 2024) | RMSE 0.485 t/ha, R² 0.886 |
+| Without weather features (Rule 5 ablation) | RMSE 0.559 t/ha (+17.4% error) |
+| Food-security tier accuracy (<2 / 2–3.5 / >3.5 t/ha) | 83.1% (6 extreme errors of 15,090) |
+
+## 10. How the App Uses the Model
+
+- The app (`app/predictor.py`) loads `app/assets/final_model.joblib` once and builds the model's 20 features with the **same formulas as `src/features.py`**: 4-month growing-season weather, temperature anomaly, rain discrepancy ratio, altitude–temperature index, Meher flag and interactions.
+- Weather and market price are **looked up automatically** from tables generated from the cleaned training data. The user never types them. Price is used only for revenue (`yield × ha × 10 × price`), never as a model input.
+- Planting months are restricted to those in the survey (Feb, Mar, Jun, Jul, Aug), and seasons to 2021–2024, so the model is never asked about conditions it has not seen.
+- Every number on screen is computed: KPIs, the fertilizer response curve, the seed and pest effects, the cooperative portfolio (15 real unseen survey plots or an uploaded CSV), climate stress tests (the model re-run with shocked weather on 200 real plots per region × crop), the confusion matrix and the compliance checks.
+- `tests/test_app_parity.py` proves the app reproduces all 3,750 submitted predictions.

@@ -76,3 +76,6 @@ models/*
 !models/final_model.joblib
 submissions/*
 !submission/team_11_submission.csv
+
+# Local tunnel helper output (machine-specific)
+active_tunnel_url.txt
