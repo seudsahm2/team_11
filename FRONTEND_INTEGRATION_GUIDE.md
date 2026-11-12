@@ -60,4 +60,4 @@ Predictions are clipped to [0.1, 9.0] t/ha, the same bounds as the submission. R
 
 ## 5. Headline metrics (5-fold out-of-fold)
 
-CV RMSE **0.476 t/ha**, MAE 0.348, R² **0.885**; out-of-time 2024 RMSE 0.485; without weather 0.559 (+17.4%); tier accuracy **83.1%**, 6 extreme errors of 15,090.
+CV RMSE **0.476 t/ha**, MAE 0.348, R² **0.885**; out-of-time 2024 RMSE 0.485; without weather 0.558 (+17.4%); tier accuracy **83.1%**, 6 extreme errors of 15,090.

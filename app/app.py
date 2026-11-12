@@ -256,9 +256,14 @@ css = f"""
     }}
     .kpi-tile-num {{
         font-family: 'Outfit', sans-serif;
-        font-size: 1.95rem;
+        font-size: clamp(1.25rem, 1.9vw, 1.95rem);
         font-weight: 800;
         line-height: 1.1;
+        white-space: nowrap;
+    }}
+    .kpi-tile {{ min-height: 128px; }}
+    .card-title {{
+        font-weight: 800; font-size: 0.95rem; color: #0f172a; margin-bottom: 4px;
     }}
     .kpi-tile-badge {{
         display: inline-flex;
@@ -349,6 +354,26 @@ PLOT_COLUMNS = [
 
 
 @st.cache_data(show_spinner=False)
+def build_id() -> str:
+    """Short git commit of the running code, read from .git without needing the git CLI."""
+    try:
+        git = project_dir / ".git"
+        head = (git / "HEAD").read_text().strip()
+        if not head.startswith("ref:"):
+            return head[:7]
+        ref = head.split(" ", 1)[1]
+        ref_file = git / ref
+        if ref_file.exists():
+            return ref_file.read_text().strip()[:7]
+        for line in (git / "packed-refs").read_text().splitlines():
+            if line.endswith(" " + ref):
+                return line[:7]
+    except Exception:
+        pass
+    return "unknown"
+
+
+@st.cache_data(show_spinner=False)
 def price_ticker():
     p = predictor.prices.reset_index()
     nat = p.groupby(["crop_type", "year"])["price_birr_per_quintal"].mean().unstack()
@@ -376,7 +401,7 @@ st.markdown(f"""
             <span class="pulse-indicator"></span> Production ML Model Active · CV RMSE {CV.get("rmse", 0):.2f} t/ha
         </div>
         <div style="font-size: 0.75rem; color: #64748b; font-weight: 600;">
-            Team 11 · {M.get("n_train_plots", 0):,} Survey Plots
+            Team 11 · {M.get("n_train_plots", 0):,} Survey Plots · build {build_id()}
         </div>
     </div>
 </div>
@@ -467,10 +492,8 @@ with t_appraisal:
 
     col_deck, col_display = st.columns([1.1, 1.9], gap="medium")
 
-    with col_deck:
-        st.markdown("""<div class="saas-card">
-        <div style="font-weight: 800; font-size: 0.95rem; color: #0f172a; margin-bottom: 12px;">📋 Plot Characteristics</div>
-        """, unsafe_allow_html=True)
+    with col_deck, st.container(border=True):
+        st.markdown('<div class="card-title">📋 Plot Characteristics</div>', unsafe_allow_html=True)
 
         d1, d2 = st.columns(2)
         with d1:
@@ -514,8 +537,6 @@ with t_appraisal:
             c_labor_price = st.number_input("Labor wage (ETB/day)", 0.0, 2000.0, 280.0, step=10.0)
             c_seed_price = st.number_input("Certified seed (ETB/ha)", 0.0, 50000.0, 4800.0, step=100.0)
             c_pest_price = st.number_input("Pest control (ETB/ha, if pressure)", 0.0, 20000.0, 2400.0, step=100.0)
-
-        st.markdown("</div>", unsafe_allow_html=True)
 
     with col_display:
         in_dict = {
@@ -626,7 +647,7 @@ with t_appraisal:
             <div class="pnl-strip"><span>Fertilizer ({fert_val*farm_size:.0f} kg @ {c_fert_price:,.0f} ETB)</span><span style="color: #dc2626;">-{cost_fert:,.0f} ETB</span></div>
             <div class="pnl-strip"><span>Certified Seed</span><span style="color: #dc2626;">-{cost_seed:,.0f} ETB</span></div>
             <div class="pnl-strip"><span>Labor ({labor_val*farm_size:.0f} days @ {c_labor_price:,.0f} ETB)</span><span style="color: #dc2626;">-{cost_labor:,.0f} ETB</span></div>
-            <div class="pnl-strip"><span>Pest Protection Spray</span><span style="color: #dc2626;">-{cost_pest:,.0f} ETB</span></div>
+            <div class="pnl-strip"><span>Pest Protection Spray</span><span style="color: {'#dc2626' if cost_pest else '#64748b'};">{f'-{cost_pest:,.0f}' if cost_pest else '0'} ETB</span></div>
             <div class="pnl-strip-bold"><span>Net Household Cash</span><span style="color: {profit_c};">{net_cash:,.0f} ETB</span></div>
             </div>""", unsafe_allow_html=True)
 
@@ -759,10 +780,11 @@ with t_coop:
         ltv = (credit_needed / c_val * 100.0) if c_val > 0 else 0.0
 
         cm1, cm2, cm3, cm4 = st.columns(4)
-        cm1.metric("Total Grain Output", f"{c_tons:.1f} Tons", f"{len(batch_res)} plots · {batch_res['farm_size_ha'].sum():.1f} ha")
-        cm2.metric("Warehouse Jute Bags", f"{c_bags:,.0f} Units", "100-kg bags")
-        cm3.metric("Freight Fleet Needed", f"{max(1, int(np.ceil(trucks)))} Trucks", "40-ton loads")
-        cm4.metric("Harvest Collateral", f"{c_val/1e6:.2f}M ETB", f"Input credit / value: {ltv:.1f}%", delta_color="off")
+        info = dict(delta_color="off", delta_arrow="off")  # descriptive sub-labels, not changes
+        cm1.metric("Total Grain Output", f"{c_tons:.1f} Tons", f"{len(batch_res)} plots · {batch_res['farm_size_ha'].sum():.1f} ha", **info)
+        cm2.metric("Warehouse Jute Bags", f"{c_bags:,.0f} Units", "100-kg bags", **info)
+        cm3.metric("Freight Fleet Needed", f"{max(1, int(np.ceil(trucks)))} Trucks", "40-ton loads", **info)
+        cm4.metric("Harvest Collateral", f"{c_val/1e6:.2f}M ETB", f"Input credit / value: {ltv:.1f}%", **info)
 
         st.markdown("<br>", unsafe_allow_html=True)
 
@@ -772,7 +794,8 @@ with t_coop:
                 batch_res.groupby("crop_type")["total_harvest_tons"].sum().reset_index(),
                 x="crop_type", y="total_harvest_tons", color="crop_type",
                 title="Total Metric Tons by Staple Crop",
-                color_discrete_sequence=px.colors.qualitative.Safe
+                color_discrete_sequence=px.colors.qualitative.Safe,
+                labels={"crop_type": "Crop", "total_harvest_tons": "Harvest (tons)"},
             )
             f_crop.update_layout(template="plotly_white", height=280, showlegend=False, margin=dict(l=10, r=10, t=30, b=10))
             st.plotly_chart(f_crop, width="stretch")
@@ -789,12 +812,18 @@ with t_coop:
 
         show_cols = ["plot_id", "region", "crop_type", "planting_month", "farm_size_ha",
                      "predicted_yield_t_ha", "total_harvest_tons", "gross_revenue_birr"]
+        nice = {
+            "plot_id": "Plot ID", "region": "Region", "crop_type": "Crop", "planting_month": "Planted",
+            "farm_size_ha": "Area", "predicted_yield_t_ha": "Predicted Yield",
+            "total_harvest_tons": "Harvest", "gross_revenue_birr": "Gross Revenue",
+        }
+        table = batch_res[show_cols].assign(crop_type=batch_res["crop_type"].str.title()).rename(columns=nice)
         st.dataframe(
-            batch_res[show_cols].style.format({
-                "farm_size_ha": "{:.2f} ha",
-                "predicted_yield_t_ha": "{:.2f} t/ha",
-                "total_harvest_tons": "{:.2f} t",
-                "gross_revenue_birr": "{:,.0f} ETB"
+            table.style.format({
+                "Area": "{:.2f} ha",
+                "Predicted Yield": "{:.2f} t/ha",
+                "Harvest": "{:.2f} t",
+                "Gross Revenue": "{:,.0f} ETB"
             }),
             width="stretch", hide_index=True,
         )
@@ -856,12 +885,19 @@ with t_climate:
 
     st.markdown("<br>", unsafe_allow_html=True)
     m_s1, m_s2, m_s3 = st.columns(3)
-    m_s1.metric("Normal Season Output", f"{b_bags:.0f} Bags", f"{b_y:.2f} t/ha", delta_color="off")
-    m_s2.metric("Stress-Tested Output", f"{s_bags:.0f} Bags", delta=f"{s_y - b_y:+.2f} t/ha ({(s_y / b_y - 1) * 100:+.1f}%)")
+    pct = (s_y / b_y - 1) * 100 if b_y > 0 else 0.0
+    m_s1.metric("Normal Season Output", f"{b_bags:.0f} Bags", f"{b_y:.2f} t/ha", delta_color="off", delta_arrow="off")
+    m_s2.metric("Stress-Tested Output", f"{s_bags:.0f} Bags", delta=f"{s_y - b_y:+.2f} t/ha ({pct:+.1f}%)")
     if loss >= 0:
         m_s3.metric("Household Loss Exposure", f"{loss:,.0f} ETB", delta=f"{-loss:+,.0f} ETB net income")
     else:
         m_s3.metric("Household Income Change", f"{-loss:+,.0f} ETB", delta=f"{-loss:+,.0f} ETB net income")
+    if SCENARIOS[cs_sel] and abs(pct) < 2.0:
+        st.info(
+            f"Little net effect: for {c_crop.lower()} in {c_reg} the model shows gains and losses largely offsetting "
+            f"across plots ({pct:+.1f}% on average, {stt['share_hit']:.0%} of plots lose yield)."
+        )
+    elif SCENARIOS[cs_sel] and pct >= 2.0:
         st.info(
             f"In the model, {c_crop.lower()} in {c_reg} benefits from this scenario. Warm-season crops (maize, sorghum) grown in "
             "cool highlands gain from warmer seasons, while cool-season crops (wheat, barley, teff) lose yield."
@@ -948,7 +984,7 @@ with t_governance:
         """, unsafe_allow_html=True)
         st.markdown("<br>", unsafe_allow_html=True)
         cm_k1, cm_k2 = st.columns(2)
-        cm_k1.metric("CV RMSE", f"{CV.get('rmse', 0):.3f} t/ha", f"R² {CV.get('r2', 0):.3f}", delta_color="off")
+        cm_k1.metric("CV RMSE", f"{CV.get('rmse', 0):.3f} t/ha", f"R² {CV.get('r2', 0):.3f}", delta_color="off", delta_arrow="off")
         cm_k2.metric("Without Weather", f"{CV.get('no_weather_rmse', 0):.3f} t/ha", f"+{weather_gain:.1f}% error", delta_color="inverse")
 
     with cm_cols2:

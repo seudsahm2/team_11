@@ -491,7 +491,7 @@ def build_slide_4(prs):
     add_kpi_card(slide, start_x + (kpi_w + gap_x) * 2, top_y, kpi_w, kpi_h,
                  "-66.0%", "Error Reduction vs. Baseline", "Baseline 1.400 → Production 0.476 t/ha", ACCENT_GOLD)
     add_kpi_card(slide, start_x + (kpi_w + gap_x) * 3, top_y, kpi_w, kpi_h,
-                 "+17.4%", "Error Without Weather Features", "0.476 → 0.559 t/ha (Rule 5)", ACCENT_BLUE)
+                 "+17.4%", "Error Without Weather Features", "0.476 → 0.558 t/ha (Rule 5)", ACCENT_BLUE)
 
     # 2 Columns (Model Benchmarking Left, Features & Ablation Right)
     body_y = Inches(2.90)
@@ -522,7 +522,7 @@ def build_slide_4(prs):
     tb_r = slide.shapes.add_textbox(right_x + Inches(0.2), body_y + Inches(2.45), col_w - Inches(0.4), Inches(1.35))
     tf_r = tb_r.text_frame
     tf_r.word_wrap = True
-    add_bullet_point(tf_r, "Mandatory Weather Ablation (Rule 5)", "Omitting weather-derived features raises 5-fold CV RMSE from 0.476 to 0.559 t/ha (+17.4%), confirming that seasonal climate carries real predictive signal.", pt_size=9.5, is_first=True)
+    add_bullet_point(tf_r, "Mandatory Weather Ablation (Rule 5)", "Omitting weather-derived features raises 5-fold CV RMSE from 0.476 to 0.558 t/ha (+17.4%), confirming that seasonal climate carries real predictive signal.", pt_size=9.5, is_first=True)
     add_bullet_point(tf_r, "5-Fold CV Stability", "Fold RMSEs of 0.467–0.490 t/ha (±0.009) show stable generalization across all 5 random folds.", pt_size=9.5, space_before=3)
     add_bullet_point(tf_r, "Out-of-Time 2024 Generalization", "Trained on 2021–2023 (11,277 plots) and tested on 2024 (3,813 plots): 0.485 t/ha RMSE (R² = 0.886), with no material temporal drift.", pt_size=9.5, space_before=3)
 

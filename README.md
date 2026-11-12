@@ -273,7 +273,7 @@ All figures are 5-fold **out-of-fold** results (each plot scored by a model that
 | CV RMSE / MAE / R² | **0.476 t/ha / 0.348 t/ha / 0.885** |
 | Mean-baseline RMSE | 1.400 t/ha (−66% error) |
 | Out-of-time (train 2021–23 → test 2024) | RMSE 0.485 t/ha, R² 0.886 |
-| Without weather features (Rule 5 ablation) | RMSE 0.559 t/ha (+17.4% error) |
+| Without weather features (Rule 5 ablation) | RMSE 0.558 t/ha (+17.4% error) |
 | Food-security tier accuracy (<2 / 2–3.5 / >3.5 t/ha) | 83.1% (6 extreme errors of 15,090) |
 
 ## 10. How the App Uses the Model

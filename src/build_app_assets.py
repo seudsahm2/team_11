@@ -231,13 +231,13 @@ def main() -> None:
         "weather_features": [f for f in features if f.startswith("weather_") or f == "altitude_temp_index"],
         "cv": {
             "folds": 5,
-            "rmse": round(float(root_mean_squared_error(y, oof)), 4),
-            "mae": round(float(mean_absolute_error(y, oof)), 4),
-            "r2": round(float(r2_score(y, oof)), 4),
+            "rmse": round(float(root_mean_squared_error(y, oof)), 6),
+            "mae": round(float(mean_absolute_error(y, oof)), 6),
+            "r2": round(float(r2_score(y, oof)), 6),
             "fold_rmse": [round(v, 4) for v in fold_rmse],
             "baseline_mean_rmse": round(baseline_rmse, 4),
             "error_reduction_vs_baseline": round(1 - root_mean_squared_error(y, oof) / baseline_rmse, 4),
-            "no_weather_rmse": round(float(root_mean_squared_error(y, oof_nw)), 4),
+            "no_weather_rmse": round(float(root_mean_squared_error(y, oof_nw)), 6),
         },
         "out_of_time": oot,
         "tiers": {
