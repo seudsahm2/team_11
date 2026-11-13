@@ -53,10 +53,10 @@ Predictions are clipped to [0.1, 9.0] t/ha, the same bounds as the submission. R
 
 | Tab | Content |
 | :--- | :--- |
-| Farm forecast | Yield ± crop-specific CV error, revenue and P&L (cost assumptions editable), benchmark gauge vs surveyed plots (p10–p90, median), looked-up season weather and price, model-estimated seed and pest effects for this plot, fertilizer profit curve (17 model predictions) |
-| Cooperative | 15 real unseen survey plots or an uploaded CSV (validated, template downloadable); totals, bags, trucks, revenue, input-credit ratio; downloadable forecasts |
-| Climate stress | Heatwave (+2.25 °C, +5 heat days) or drought (−35% rain): the model re-run on 200 real plots for the region × crop, plus the change for every crop in that region. Fertilizer price shock (+50% cost) |
-| Model audit | Out-of-fold metrics, tier confusion matrix, error by crop and region, out-of-time result, figure gallery, live compliance checks |
+| Farmgate Profit Studio | Yield ± crop-specific CV error, revenue and P&L (cost assumptions editable), auto-looked-up weather and price strip, model-estimated seed and pest effects for this plot, fertilizer profit curve (17 model predictions) |
+| Cooperative Command Hub | 15 real unseen survey plots or an uploaded CSV (validated, template downloadable); totals, bags, trucks, revenue, input-credit ratio; downloadable forecasts |
+| Climate Stress Radar | Heatwave (+2.25 °C, +5 heat days) or drought (−35% rain): the model re-run on 200 real plots for the region × crop. Fertilizer price shock (+50% cost) |
+| System Audit | Out-of-fold metrics, tier confusion matrix, error by crop and region, out-of-time result, figure gallery, live compliance checks |
 
 ## 5. Headline metrics (5-fold out-of-fold)
 
